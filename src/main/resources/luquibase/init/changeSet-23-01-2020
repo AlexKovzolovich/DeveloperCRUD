@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet author="Alex Kovzolovich" id="1">
+
+        <createTable tableName="skills" schemaName="crud_app">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(45)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="account_status" schemaName="crud_app">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="status" type="VARCHAR(10)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="accounts" schemaName="crud_app">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="data" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT">
+                <constraints foreignKeyName="account_status(id)"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="developers" schemaName="crud_app">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(45)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="account" type="INT">
+                <constraints foreignKeyName="accounts(id)"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="developer_skills" schemaName="crud_app">
+            <column name="developer_id" type="INT">
+                <constraints foreignKeyName="developers(id)"/>
+            </column>
+            <column name="skill_id" type="INT">
+                <constraints foreignKeyName="skills(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
