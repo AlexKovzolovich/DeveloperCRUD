@@ -1,13 +1,13 @@
 package ua.epam.service;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j;
 import ua.epam.exceptions.PersistException;
 import ua.epam.model.Skill;
 import ua.epam.repository.SkillRepository;
 
 import java.util.List;
 
-@Slf4j
+@Log4j
 public class SkillService {
     private SkillRepository skillRepository;
 

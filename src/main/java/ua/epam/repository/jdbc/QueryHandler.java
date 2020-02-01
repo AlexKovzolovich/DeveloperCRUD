@@ -6,4 +6,5 @@ public interface QueryHandler {
     String getInsertQuery();
     String getDeleteQuery();
     String getUpdateQuery();
+    String getLastIdQuery();
 }

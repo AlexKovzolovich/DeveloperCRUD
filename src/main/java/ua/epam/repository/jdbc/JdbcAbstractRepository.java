@@ -1,7 +1,6 @@
 package ua.epam.repository.jdbc;
 
 
-import ua.epam.exceptions.AlreadyExistsException;
 import ua.epam.exceptions.PersistException;
 import ua.epam.exceptions.WrongArgumentPersistentException;
 import ua.epam.mapper.Mapper;
@@ -9,10 +8,7 @@ import ua.epam.model.BasicEntity;
 import ua.epam.repository.GenericRepository;
 import ua.epam.util.ConnectionUtil;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
 public abstract class JdbcAbstractRepository<T extends BasicEntity> implements GenericRepository<T, Long> {
@@ -23,6 +19,7 @@ public abstract class JdbcAbstractRepository<T extends BasicEntity> implements G
     private final String insertQuery;
     private final String deleteQuery;
     private final String updateQuery;
+    private final String getLastIdQuery;
 
     public JdbcAbstractRepository(Class clazz, Mapper<T, ResultSet, PreparedStatement> mapper) throws PersistException {
         this.mapper = mapper;
@@ -32,6 +29,7 @@ public abstract class JdbcAbstractRepository<T extends BasicEntity> implements G
         this.insertQuery = queryHandler.getInsertQuery();
         this.deleteQuery = queryHandler.getDeleteQuery();
         this.updateQuery = queryHandler.getUpdateQuery();
+        this.getLastIdQuery = queryHandler.getLastIdQuery();
     }
 
     @Override
@@ -48,7 +46,7 @@ public abstract class JdbcAbstractRepository<T extends BasicEntity> implements G
             ResultSet resultSet = preparedStatement.executeQuery();
             entities = mapper.map(resultSet);
             if (entities.size() != 1) {
-                throw new PersistException("Wrong number of record's received");
+                throw new PersistException("Wrong number of record's received: " + entities.size());
             } else {
                 result = entities.iterator().next();
             }
@@ -78,13 +76,23 @@ public abstract class JdbcAbstractRepository<T extends BasicEntity> implements G
             throw new WrongArgumentPersistentException("object must not be null");
         }
         if (entity.getId() != null) {
-            throw new AlreadyExistsException();
+            entity.setId(null);
         }
         try (Connection connection = ConnectionUtil.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
 
             mapper.map(entity, preparedStatement);
             preparedStatement.execute();
+        } catch (SQLException e) {
+            throw new PersistException(e);
+        }
+
+        try (Connection connection = ConnectionUtil.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(getLastIdQuery)) {
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            Long id = resultSet.getLong(1);
+            entity.setId(id);
         } catch (SQLException e) {
             throw new PersistException(e);
         }

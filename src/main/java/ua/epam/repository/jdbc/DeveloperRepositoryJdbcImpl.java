@@ -54,12 +54,13 @@ public class DeveloperRepositoryJdbcImpl extends JdbcAbstractRepository<Develope
     public void save(Developer developer) throws PersistException {
         super.save(developer);
         accountRepository.save(developer.getAccount());
+        insertSkills(developer.getSkills(), developer.getId());
     }
 
     @Override
     public void delete(Developer developer) throws PersistException {
-        super.delete(developer);
         deleteSkillsByDeveloperId(developer.getId());
+        super.delete(developer);
     }
 
     @Override
@@ -104,8 +105,8 @@ public class DeveloperRepositoryJdbcImpl extends JdbcAbstractRepository<Develope
         try (Connection connection = ConnectionUtil.getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(insertSkillsQuery)) {
             for (Skill skill : skills) {
-                preparedStatement.setLong(1, skill.getId());
-                preparedStatement.setLong(2, developerId);
+                preparedStatement.setLong(1, developerId);
+                preparedStatement.setLong(2, skill.getId());
                 preparedStatement.addBatch();
             }
             preparedStatement.executeBatch();

@@ -37,6 +37,11 @@ public class QueryHandlerStorage {
                     public String getUpdateQuery() {
                         return "UPDATE accounts SET data = ?, status = ? WHERE id = ?";
                     }
+
+                    @Override
+                    public String getLastIdQuery() {
+                        return "SELECT MAX(id) FROM accounts";
+                    }
                 });
 
         storage.put(
@@ -66,6 +71,11 @@ public class QueryHandlerStorage {
                     public String getUpdateQuery() {
                         return "UPDATE skills SET name = ? WHERE id = ?";
                     }
+
+                    @Override
+                    public String getLastIdQuery() {
+                        return "SELECT MAX(id) FROM skills";
+                    }
                 });
 
         storage.put(
@@ -94,6 +104,11 @@ public class QueryHandlerStorage {
                     @Override
                     public String getUpdateQuery() {
                         return "UPDATE developers SET name = ?, account = ? WHERE ID = ?";
+                    }
+
+                    @Override
+                    public String getLastIdQuery() {
+                        return "SELECT MAX(id) FROM developers";
                     }
                 }
         );
