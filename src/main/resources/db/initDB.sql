@@ -1,6 +1,4 @@
-CREATE SCHEMA crud_app;
-
-USE crud_app;
+USE cc7r9bd1vl78tztf;
 
 CREATE TABLE skills
 (
