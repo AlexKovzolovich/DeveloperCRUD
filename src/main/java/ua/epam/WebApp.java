@@ -1,6 +1,6 @@
 package ua.epam;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j;
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.startup.Tomcat;
@@ -9,12 +9,12 @@ import org.apache.catalina.webresources.StandardRoot;
 
 import java.io.File;
 
-@Slf4j
+@Log4j
 public class WebApp {
 
     public static void main(String[] args) {
         try {
-            String webappDirLocation = "/web";
+            String webappDirLocation = "/webapp";
             Tomcat tomcat = new Tomcat();
 
             //The port that we should run on can be set into an environment variable

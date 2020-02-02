@@ -192,10 +192,7 @@
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>${maven-resources-plugin.version}</version>
                 </plugin>
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven-compiler-plugin.version}</version>
-                </plugin>
+
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
@@ -221,6 +218,38 @@
                         <path>/</path>
                         <port>8080</port>
                     </configuration>
+                </plugin>
+
+                <!--H2 DB Run-->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>1.2.1</version>
+                    <executions>
+                        <execution>
+                            <id>start-h2</id>
+                            <goals>
+                                <goal>java</goal>
+                            </goals>
+                            <phase>process-test-resources</phase>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <includeProjectDependencies>true</includeProjectDependencies>
+                        <includePluginDependencies>true</includePluginDependencies>
+                        <mainClass>org.h2.tools.Server</mainClass>
+                        <arguments>
+                            <argument>-tcp</argument>
+                            <argument>-tcpDaemon</argument>
+                        </arguments>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.h2database</groupId>
+                            <artifactId>h2</artifactId>
+                            <version>${h2.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
 
                 <plugin>

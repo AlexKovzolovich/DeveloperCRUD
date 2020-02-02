@@ -4,11 +4,10 @@
 <%@ page isELIgnored="false"%>
 
 <fmt:setLocale value="${param.lang}" />
-<fmt:setBundle basename="messages" />
+<fmt:setBundle basename="/localization/message" />
 
 <html lang="${param.lang}">
 <head>
-    <meta charset="windows-1251">
     <title>Developer CRUD REST App</title>
 <body>
 
@@ -47,6 +46,6 @@
     <li><fmt:message key="developerEndPoint.message" /></li>
 </ul>
 <br>
-<p><a href="swagger/index.html"><fmt:message key="swaggerDoclink.message" /></a></p>
+<p><a href="documentation.html"><fmt:message key="swaggerDocLink.message" /></a></p>
 </body>
 </html>
