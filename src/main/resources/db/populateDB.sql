@@ -1,3 +1,5 @@
+USE cc7r9bd1vl78tztf;
+
 INSERT INTO skills (name)
 VALUES ('java'),
        ('cpp'),
