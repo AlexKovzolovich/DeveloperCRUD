@@ -14,11 +14,11 @@ import java.util.Properties;
 public class ConnectionUtil {
     private final static BasicDataSource dataSource = new BasicDataSource();
     private final static Properties properties = new Properties();
-    private static String databaseProperties = "../resources/db/dataSource.properties";
+    private static String databaseProperties = "./src/main/resources/db/dataSource.properties";
     private static volatile boolean isInitialized = false;
 
     public static void changeToTestMod() {
-        databaseProperties = "../../test/resources/db/dataSource.properties";
+        databaseProperties = "./src/test/resources/db/dataSource.properties";
     }
 
     public static synchronized void init() {
@@ -34,7 +34,6 @@ public class ConnectionUtil {
         dataSource.setUrl(properties.getProperty("database.url"));
         dataSource.setUsername(properties.getProperty("database.user"));
         dataSource.setPassword(properties.getProperty("database.password"));
-        dataSource.setMaxOpenPreparedStatements(Integer.parseInt(properties.getProperty("database.maxPoolStatement")));
         isInitialized = true;
     }
 
