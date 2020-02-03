@@ -277,7 +277,7 @@
                     <assembleDirectory>target</assembleDirectory>
                     <programs>
                         <program>
-                            <mainClass>org.mycode.Main</mainClass>
+                            <mainClass>ua.epam.WebApp</mainClass>
                             <id>webapp</id>
                         </program>
                     </programs>
