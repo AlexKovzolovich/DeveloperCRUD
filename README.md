@@ -4,7 +4,7 @@ Developer CRUD REST app
 
 This is a simple CRUD application with REST API.
 
-https://quiet-temple-32935.herokuapp.com/
+https://developer-crud-rest.herokuapp.com/
 
 
 

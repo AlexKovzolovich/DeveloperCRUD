@@ -46,6 +46,6 @@
     <li><fmt:message key="developerEndPoint.message" /></li>
 </ul>
 <br>
-<p><a href="documentation.html"><fmt:message key="swaggerDocLink.message" /></a></p>
+<p><a href="docs/index.html"><fmt:message key="swaggerDocLink.message" /></a></p>
 </body>
 </html>
