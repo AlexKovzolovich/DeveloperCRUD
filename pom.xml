@@ -29,15 +29,6 @@
         <liquibase.version>3.8.5</liquibase.version>
         <javax-servlet.version>3.1.0</javax-servlet.version>
         <gson.version>2.8.6</gson.version>
-        <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
-        <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
-        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
-        <maven-war-plugin.version>3.2.2</maven-war-plugin.version>
-        <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
-        <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
-        <org.apache.tomcat.maven.version>2.2</org.apache.tomcat.maven.version>
-        <org.codehaus.mojo.version>2.0.0</org.codehaus.mojo.version>
     </properties>
 
     <dependencies>
@@ -168,9 +159,7 @@
     </dependencies>
 
 
-
     <build>
-        <finalName>Developer-CRUD-REST</finalName>
         <resources>
             <resource>
                 <directory>${project.basedir}/src/main/resources</directory>
@@ -181,136 +170,135 @@
                 <directory>${project.basedir}/src/test/resources</directory>
             </testResource>
         </testResources>
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+        <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven-compiler-plugin.version}</version>
-                    <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
-                    </configuration>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.1.0</version>
                 </plugin>
-                <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>${maven-resources-plugin.version}</version>
+                    <version>3.0.2</version>
                 </plugin>
-
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.0</version>
+                </plugin>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${maven-surefire-plugin.version}</version>
+                    <version>2.22.1</version>
                 </plugin>
                 <plugin>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>${maven-war-plugin.version}</version>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.0.2</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>${maven-install-plugin.version}</version>
+                    <version>2.5.2</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-deploy-plugin</artifactId>
-                    <version>${maven-deploy-plugin.version}</version>
+                    <version>2.8.2</version>
                 </plugin>
-
                 <plugin>
-                    <groupId>org.apache.tomcat.maven</groupId>
-                    <artifactId>tomcat7-maven-plugin</artifactId>
-                    <version>${org.apache.tomcat.maven.version}</version>
-                    <configuration>
-                        <path>/</path>
-                        <port>8080</port>
-                    </configuration>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.7.1</version>
                 </plugin>
-
-                <!--H2 DB Run-->
                 <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>exec-maven-plugin</artifactId>
-                    <version>1.2.1</version>
-                    <executions>
-                        <execution>
-                            <id>start-h2</id>
-                            <goals>
-                                <goal>java</goal>
-                            </goals>
-                            <phase>process-test-resources</phase>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <includeProjectDependencies>true</includeProjectDependencies>
-                        <includePluginDependencies>true</includePluginDependencies>
-                        <mainClass>org.h2.tools.Server</mainClass>
-                        <arguments>
-                            <argument>-tcp</argument>
-                            <argument>-tcpDaemon</argument>
-                        </arguments>
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>com.h2database</groupId>
-                            <artifactId>h2</artifactId>
-                            <version>${h2.version}</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>appassembler-maven-plugin</artifactId>
-                    <version>${org.codehaus.mojo.version}</version>
-                    <configuration>
-                        <assembleDirectory>target</assembleDirectory>
-                        <programs>
-                            <program>
-                                <mainClass>ua.epam.WebApp</mainClass>
-                                <id>webapp</id>
-                            </program>
-                        </programs>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>assemble</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.liquibase</groupId>
-                    <artifactId>liquibase-maven-plugin</artifactId>
-                    <version>3.8.4</version>
-                    <configuration>
-                        <propertyFile>${project.basedir}/src/main/resources/liquibase/liquibase.properties</propertyFile>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>test</id>
-                            <phase>process-test-resources</phase>
-                            <goals>
-                                <goal>update</goal>
-                            </goals>
-                            <configuration>
-                                <propertyFile>${project.basedir}/src/test/resources/liquibase/liquibase.properties</propertyFile>
-                            </configuration>
-                        </execution>
-                        <execution>
-                            <id>deploy</id>
-                            <phase>deploy</phase>
-                            <goals>
-                                <goal>update</goal>
-                            </goals>
-                            <configuration>
-                                <propertyFile>${project.basedir}/src/main/resources/liquibase/liquibase.properties</propertyFile>
-                            </configuration>
-                        </execution>
-                    </executions>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.0.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <!--Liquibase-->
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>${liquibase.version}</version>
+                <executions>
+                    <execution>
+                        <id>test</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>update</goal>
+                        </goals>
+                        <configuration>
+                            <propertyFile>src/test/resources/liquibase/liquibase.properties</propertyFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>default-cli</id>
+                        <goals>
+                            <goal>update</goal>
+                        </goals>
+                        <configuration>
+                            <propertyFile>src/main/resources/liquibase/liquibase.properties</propertyFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--H2 DB Run-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <id>start-h2</id>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <phase>process-test-resources</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includeProjectDependencies>true</includeProjectDependencies>
+                    <includePluginDependencies>true</includePluginDependencies>
+                    <mainClass>org.h2.tools.Server</mainClass>
+                    <arguments>
+                        <argument>-tcp</argument>
+                        <argument>-tcpDaemon</argument>
+                    </arguments>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.h2database</groupId>
+                        <artifactId>h2</artifactId>
+                        <version>${h2.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>appassembler-maven-plugin</artifactId>
+                <version>2.0.0</version>
+                <configuration>
+                    <assembleDirectory>target</assembleDirectory>
+                    <programs>
+                        <program>
+                            <mainClass>org.mycode.Main</mainClass>
+                            <id>webapp</id>
+                        </program>
+                    </programs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>assemble</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>
