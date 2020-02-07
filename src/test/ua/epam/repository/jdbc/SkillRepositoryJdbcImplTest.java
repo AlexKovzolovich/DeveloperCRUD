@@ -1,5 +1,6 @@
 package ua.epam.repository.jdbc;
 
+import lombok.extern.log4j.Log4j;
 import org.junit.*;
 import ua.epam.exceptions.PersistException;
 import ua.epam.mapper.SkillMapper;
@@ -12,6 +13,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+@Log4j
 public class SkillRepositoryJdbcImplTest {
     private static SkillRepository skillRepository;
     private Skill expectedSkill = new Skill(1L, "java");
@@ -44,6 +46,7 @@ public class SkillRepositoryJdbcImplTest {
             Skill loadedSkill = skillRepository.getById(1L);
             assertEquals(expectedSkill, loadedSkill);
         } catch (PersistException e) {
+            log.error(e);
             fail();
         }
     }
