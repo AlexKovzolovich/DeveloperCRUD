@@ -1,4 +1,4 @@
-USE cc7r9bd1vl78tztf;
+USE owapv3xvgqrjk3py;
 
 INSERT INTO skills (name)
 VALUES ('java'),
