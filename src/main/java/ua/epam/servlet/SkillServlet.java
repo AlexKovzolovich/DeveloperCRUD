@@ -1,6 +1,8 @@
 package ua.epam.servlet;
 
 import com.google.gson.Gson;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import ua.epam.exceptions.PersistException;
 import ua.epam.mapper.SkillMapper;
 import ua.epam.model.Skill;
@@ -17,19 +19,18 @@ import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "SkillServlet", urlPatterns = "/api/v1/skill")
+@Controller
 public class SkillServlet extends HttpServlet {
     private SkillService skillService;
-    private Gson gson = new Gson();
+    private Gson gson;
 
-    {
-        try {
-            skillService = new SkillService(
-                    new SkillRepositoryJdbcImpl(
-                            new SkillMapper()));
-        } catch (PersistException e) {
-            throw new RuntimeException(e);
-        }
+    public SkillServlet(SkillService skillService) {
+        this.skillService = skillService;
+        this.gson = new Gson();
     }
+
+    @Autowired
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

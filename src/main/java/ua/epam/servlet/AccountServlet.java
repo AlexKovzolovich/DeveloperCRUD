@@ -1,10 +1,9 @@
 package ua.epam.servlet;
 
 import com.google.gson.Gson;
-import ua.epam.exceptions.PersistException;
-import ua.epam.mapper.AccountMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import ua.epam.model.Account;
-import ua.epam.repository.jdbc.AccountRepositoryJdbcImpl;
 import ua.epam.service.AccountService;
 
 import javax.servlet.ServletException;
@@ -17,16 +16,15 @@ import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "AccountServlet", urlPatterns = "/api/v1/account")
+@Controller
 public class AccountServlet extends HttpServlet {
     private AccountService accountService;
-    private Gson gson = new Gson();
+    private Gson gson;
 
-    {
-        try {
-            accountService = new AccountService(new AccountRepositoryJdbcImpl(new AccountMapper()));
-        } catch (PersistException e) {
-            throw new RuntimeException(e);
-        }
+    @Autowired
+    public AccountServlet(AccountService accountService) {
+        this.accountService = accountService;
+        this.gson = new Gson();
     }
 
     @Override

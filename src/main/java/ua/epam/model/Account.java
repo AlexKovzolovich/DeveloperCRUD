@@ -1,7 +1,11 @@
 package ua.epam.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Objects;
 
+@Entity
+@Table(name = "accounts")
 public class Account extends BasicEntity{
     private String data;
     private AccountStatus status;
@@ -38,10 +42,6 @@ public class Account extends BasicEntity{
                 "data='" + data + '\'' +
                 ", status=" + status +
                 '}';
-    }
-
-    public enum AccountStatus {
-        ACTIVE, BANNED, DELETED
     }
 
     @Override

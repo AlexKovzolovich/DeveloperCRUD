@@ -1,6 +1,9 @@
 package ua.epam.service;
 
 import lombok.extern.log4j.Log4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import ua.epam.exceptions.PersistException;
 import ua.epam.model.Developer;
 import ua.epam.repository.DeveloperRepository;
@@ -8,10 +11,12 @@ import ua.epam.repository.DeveloperRepository;
 import java.util.List;
 
 @Log4j
+@Service
 public class DeveloperService {
     private DeveloperRepository developerRepository;
 
-    public DeveloperService(DeveloperRepository developerRepository) {
+    @Autowired
+    public DeveloperService(@Qualifier("developerRepositoryJpa") DeveloperRepository developerRepository) {
         this.developerRepository = developerRepository;
     }
 

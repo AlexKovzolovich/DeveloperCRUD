@@ -1,6 +1,9 @@
 package ua.epam.service;
 
 import lombok.extern.log4j.Log4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import ua.epam.exceptions.PersistException;
 import ua.epam.model.Account;
 import ua.epam.repository.AccountRepository;
@@ -8,10 +11,12 @@ import ua.epam.repository.AccountRepository;
 import java.util.List;
 
 @Log4j
+@Service
 public class AccountService {
     private AccountRepository accountRepository;
 
-    public AccountService(AccountRepository accountRepository) {
+    @Autowired
+    public AccountService(@Qualifier("accountRepositoryJpa") AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
 

@@ -1,5 +1,6 @@
 package ua.epam.mapper;
 
+import org.springframework.stereotype.Component;
 import ua.epam.exceptions.PersistException;
 import ua.epam.exceptions.WrongArgumentPersistentException;
 import ua.epam.model.Account;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class DeveloperMapper implements Mapper <Developer, ResultSet, PreparedStatement> {
     private AccountRepository accountRepository;
 
@@ -48,7 +50,7 @@ public class DeveloperMapper implements Mapper <Developer, ResultSet, PreparedSt
         }
         Long developerId = developer.getId();
         String name = developer.getName();
-        long accountStatus = developer.getAccount().getStatus().ordinal() + 1L;
+        long accountStatus = developer.getAccount().getStatus().getId();
 
         try {
             preparedStatement.setString(1, name);

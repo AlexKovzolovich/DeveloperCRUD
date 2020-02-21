@@ -1,8 +1,15 @@
 package ua.epam.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Objects;
 
+@Entity
+@Table(name = "skills")
 public class Skill extends BasicEntity{
+
+    @Column(name = "name")
     private String name;
 
     public Long getId() {

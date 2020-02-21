@@ -112,6 +112,41 @@ public class QueryHandlerStorage {
                     }
                 }
         );
+
+        storage.put(
+                AccountStatusRepositoryJdbcImpl.class,
+                new QueryHandler() {
+                    @Override
+                    public String getSelectAllQuery() {
+                        return "SELECT * FROM account_status";
+                    }
+
+                    @Override
+                    public String getSelectByIdQuery() {
+                        return getSelectAllQuery() + " WHERE id = ?";
+                    }
+
+                    @Override
+                    public String getInsertQuery() {
+                        return "INSERT INTO account_status (status) VALUES (?)";
+                    }
+
+                    @Override
+                    public String getDeleteQuery() {
+                        return "DELETE FROM account_status WHERE id = ?";
+                    }
+
+                    @Override
+                    public String getUpdateQuery() {
+                        return "UPDATE account_status SET status = ? WHERE id = ?";
+                    }
+
+                    @Override
+                    public String getLastIdQuery() {
+                        return "SELECT MAX(id) FROM account_status";
+                    }
+                }
+        );
     }
 
     public static QueryHandler getQueryHandler(Class clazz) throws PersistException {

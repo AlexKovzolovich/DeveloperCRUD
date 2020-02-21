@@ -1,13 +1,17 @@
 package ua.epam.servlet;
 
 import com.google.gson.Gson;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import ua.epam.exceptions.PersistException;
 import ua.epam.mapper.AccountMapper;
+import ua.epam.mapper.AccountStatusMapper;
 import ua.epam.mapper.DeveloperMapper;
 import ua.epam.mapper.SkillMapper;
 import ua.epam.model.Developer;
 import ua.epam.repository.AccountRepository;
 import ua.epam.repository.jdbc.AccountRepositoryJdbcImpl;
+import ua.epam.repository.jdbc.AccountStatusRepositoryJdbcImpl;
 import ua.epam.repository.jdbc.DeveloperRepositoryJdbcImpl;
 import ua.epam.repository.jdbc.SkillRepositoryJdbcImpl;
 import ua.epam.service.DeveloperService;
@@ -22,21 +26,17 @@ import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "DeveloperServlet", urlPatterns = "/api/v1/developer")
+@Controller
 public class DeveloperServlet extends HttpServlet {
     private DeveloperService developerService;
-    private Gson gson = new Gson();
+    private Gson gson;
 
-    {
-        try {
-            AccountRepository accountRepository = new AccountRepositoryJdbcImpl(new AccountMapper());
-            developerService = new DeveloperService(
-                    new DeveloperRepositoryJdbcImpl(new DeveloperMapper(accountRepository),
-                    new SkillRepositoryJdbcImpl(new SkillMapper()),
-                    accountRepository));
-        } catch (PersistException e) {
-            throw new RuntimeException(e);
-        }
+    public DeveloperServlet(DeveloperService developerService) {
+        this.developerService = developerService;
+        gson = new Gson();
     }
+
+    @Autowired
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
