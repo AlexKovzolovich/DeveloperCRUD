@@ -26,7 +26,6 @@ import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "DeveloperServlet", urlPatterns = "/api/v1/developer")
-@Controller
 public class DeveloperServlet extends HttpServlet {
     private DeveloperService developerService;
     private Gson gson;

@@ -1,5 +1,7 @@
 package ua.epam.mapper;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import ua.epam.exceptions.PersistException;
 import ua.epam.exceptions.WrongArgumentPersistentException;
@@ -17,7 +19,8 @@ import java.util.List;
 public class DeveloperMapper implements Mapper <Developer, ResultSet, PreparedStatement> {
     private AccountRepository accountRepository;
 
-    public DeveloperMapper(AccountRepository accountRepository) {
+    @Autowired
+    public DeveloperMapper(@Qualifier("accountRepositoryJdbc") AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
 

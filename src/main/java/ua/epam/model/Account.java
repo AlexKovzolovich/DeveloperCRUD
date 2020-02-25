@@ -1,13 +1,16 @@
 package ua.epam.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "accounts")
 public class Account extends BasicEntity{
+    @Column(name = "data")
     private String data;
+
+    @ManyToOne
+    @JoinColumn(name = "status")
     private AccountStatus status;
 
     public Account(Long id, String data, AccountStatus status) {

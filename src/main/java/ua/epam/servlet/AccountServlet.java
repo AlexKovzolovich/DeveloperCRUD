@@ -16,7 +16,6 @@ import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "AccountServlet", urlPatterns = "/api/v1/account")
-@Controller
 public class AccountServlet extends HttpServlet {
     private AccountService accountService;
     private Gson gson;

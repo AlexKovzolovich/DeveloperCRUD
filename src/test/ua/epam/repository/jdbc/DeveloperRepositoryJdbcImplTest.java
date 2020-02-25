@@ -4,9 +4,11 @@ import lombok.extern.log4j.Log4j;
 import org.junit.*;
 import ua.epam.exceptions.PersistException;
 import ua.epam.mapper.AccountMapper;
+import ua.epam.mapper.AccountStatusMapper;
 import ua.epam.mapper.DeveloperMapper;
 import ua.epam.mapper.SkillMapper;
 import ua.epam.model.Account;
+import ua.epam.model.AccountStatus;
 import ua.epam.model.Developer;
 import ua.epam.model.Skill;
 import ua.epam.repository.AccountRepository;
@@ -26,15 +28,15 @@ import static org.junit.Assert.*;
 public class DeveloperRepositoryJdbcImplTest {
     private static DeveloperRepository developerRepository;
 
-    private Account alexAccount = new Account(1L, "first account", Account.AccountStatus.ACTIVE);
+    private Account alexAccount = new Account(1L, "first account", new AccountStatus(1L, "ACTIVE"));
     private Set<Skill> alexSkills = new HashSet<>(Arrays.asList(new Skill(1L, "java"), new Skill(5L, "sql")));
     private Developer expected = new Developer(1L, "Alex", alexAccount, alexSkills);
-    private Developer toSave = new Developer(null,"test", new Account(null, "test", Account.AccountStatus.ACTIVE), alexSkills);
+    private Developer toSave = new Developer(null,"test", new Account(null, "test", new AccountStatus(2L, "BANNED")), alexSkills);
 
     @BeforeClass
     public static void prepare() {
         try {
-            AccountRepository accountRepository = new AccountRepositoryJdbcImpl(new AccountMapper());
+            AccountRepository accountRepository = new AccountRepositoryJdbcImpl(new AccountMapper(new AccountStatusRepositoryJdbcImpl(new AccountStatusMapper())));
             SkillRepository skillRepository = new SkillRepositoryJdbcImpl(new SkillMapper());
             developerRepository = new DeveloperRepositoryJdbcImpl(new DeveloperMapper(accountRepository), skillRepository, accountRepository);
             ConnectionUtil.changeToTestMod();

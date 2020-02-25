@@ -1,6 +1,7 @@
 package ua.epam.repository.jdbc;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import ua.epam.exceptions.PersistException;
 import ua.epam.mapper.Mapper;
@@ -20,6 +21,7 @@ import java.util.List;
 import java.util.Set;
 
 @Repository
+@Qualifier("developerRepositoryJdbc")
 public class DeveloperRepositoryJdbcImpl extends JdbcAbstractRepository<Developer> implements DeveloperRepository {
     private SkillRepository skillRepository;
     private AccountRepository accountRepository;
@@ -29,8 +31,8 @@ public class DeveloperRepositoryJdbcImpl extends JdbcAbstractRepository<Develope
 
     @Autowired
     public DeveloperRepositoryJdbcImpl(Mapper<Developer, ResultSet, PreparedStatement> mapper,
-                                       SkillRepository skillRepository,
-                                       AccountRepository accountRepository) throws PersistException {
+                                       @Qualifier("skillRepositoryJdbc") SkillRepository skillRepository,
+                                       @Qualifier("accountRepositoryJdbc") AccountRepository accountRepository) throws PersistException {
         super(DeveloperRepositoryJdbcImpl.class, mapper);
         this.skillRepository = skillRepository;
         this.accountRepository = accountRepository;

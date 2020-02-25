@@ -1,6 +1,7 @@
 package ua.epam.mapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import ua.epam.exceptions.PersistException;
 import ua.epam.exceptions.WrongArgumentPersistentException;
@@ -19,7 +20,7 @@ public class AccountMapper implements Mapper<Account, ResultSet, PreparedStateme
     private AccountStatusRepository accountStatusRepository;
 
     @Autowired
-    public AccountMapper(AccountStatusRepository accountStatusRepository) {
+    public AccountMapper(@Qualifier("accountStatusRepositoryJdbc") AccountStatusRepository accountStatusRepository) {
         this.accountStatusRepository = accountStatusRepository;
     }
 

@@ -4,7 +4,9 @@ import lombok.extern.log4j.Log4j;
 import org.junit.*;
 import ua.epam.exceptions.PersistException;
 import ua.epam.mapper.AccountMapper;
+import ua.epam.mapper.AccountStatusMapper;
 import ua.epam.model.Account;
+import ua.epam.model.AccountStatus;
 import ua.epam.repository.AccountRepository;
 import ua.epam.repository.testUtil.TestUtil;
 import ua.epam.util.ConnectionUtil;
@@ -16,14 +18,14 @@ import static org.junit.Assert.*;
 @Log4j
 public class AccountRepositoryJdbcImplTest {
     private static AccountRepository accountRepository;
-    private Account expectedAccount = new Account(1L, "first account", Account.AccountStatus.ACTIVE);
+    private Account expectedAccount = new Account(1L, "first account", new AccountStatus(1L, "ACTIVE"));
     private String data = "test";
-    private Account toSave = new Account(null, data, Account.AccountStatus.BANNED);
+    private Account toSave = new Account(null, data, new AccountStatus(2L, "BANNED"));
 
     @BeforeClass
     public static void prepare() {
         try {
-            accountRepository = new AccountRepositoryJdbcImpl(new AccountMapper());
+            accountRepository = new AccountRepositoryJdbcImpl(new AccountMapper(new AccountStatusRepositoryJdbcImpl(new AccountStatusMapper())));
             ConnectionUtil.changeToTestMod();
         } catch (PersistException e) {
             fail();

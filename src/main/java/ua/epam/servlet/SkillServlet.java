@@ -19,7 +19,6 @@ import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "SkillServlet", urlPatterns = "/api/v1/skill")
-@Controller
 public class SkillServlet extends HttpServlet {
     private SkillService skillService;
     private Gson gson;

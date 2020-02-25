@@ -16,7 +16,7 @@ public class DeveloperService {
     private DeveloperRepository developerRepository;
 
     @Autowired
-    public DeveloperService(@Qualifier("developerRepositoryJpa") DeveloperRepository developerRepository) {
+    public DeveloperService(@Qualifier("developerRepositoryJdbc") DeveloperRepository developerRepository) {
         this.developerRepository = developerRepository;
     }
 

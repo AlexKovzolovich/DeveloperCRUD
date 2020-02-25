@@ -16,7 +16,7 @@ public class SkillService {
     private SkillRepository skillRepository;
 
     @Autowired
-    public SkillService(@Qualifier("skillRepositoryJpa") SkillRepository skillRepository) {
+    public SkillService(@Qualifier("skillRepositoryJdbc") SkillRepository skillRepository) {
         this.skillRepository = skillRepository;
     }
 
