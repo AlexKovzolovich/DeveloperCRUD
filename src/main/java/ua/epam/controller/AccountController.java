@@ -7,16 +7,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import ua.epam.model.Account;
 import ua.epam.service.AccountService;
-import ua.epam.service.serviceImpl.AccountServiceImpl;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/api/v1/account")
+@RequestMapping("/account")
 public class AccountController {
     private AccountService accountService;
     private final Gson gson = new Gson();
-    private final String redirectToGet = "redirect:/api/v1/account";
+    private final String redirectToGet = "redirect:/account";
 
     @Autowired
     public AccountController(AccountService accountService) {

@@ -13,11 +13,11 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping("/api/v1/skill")
+@RequestMapping("/skill")
 public class SkillController {
     private SkillService skillService;
     private final Gson gson = new Gson();
-    private final String redirectToGet ="redirect:/api/vi/skill";
+    private final String redirectToGet ="redirect:/skill";
 
     @Autowired
     public SkillController(SkillService skillService) {

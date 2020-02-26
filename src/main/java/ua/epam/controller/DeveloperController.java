@@ -14,11 +14,11 @@ import java.util.List;
 
 @Log4j
 @Controller
-@RequestMapping("/api/v1/developer")
+@RequestMapping("/developer")
 public class DeveloperController {
     private DeveloperService developerService;
     private final Gson gson = new Gson();
-    private final String redirectToGet = "redirect:/api/v1/developer";
+    private final String redirectToGet = "redirect:/developer";
 
     @Autowired
     public DeveloperController(DeveloperService developerService) {
