@@ -15,7 +15,6 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import ua.epam.annotation.Timed;
 
-import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.lang.reflect.Proxy;
 import java.util.HashMap;
@@ -27,9 +26,6 @@ import java.util.Properties;
 @ComponentScan("ua.epam")
 @Log4j
 public class AppConfig {
-
-    @Resource
-    private Environment environment;
 
     @Bean
     public DataSource dataSource() {
