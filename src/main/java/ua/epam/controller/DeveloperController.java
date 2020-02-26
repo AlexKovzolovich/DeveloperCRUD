@@ -1,15 +1,18 @@
 package ua.epam.controller;
 
 import com.google.gson.Gson;
+import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import ua.epam.model.Developer;
 import ua.epam.service.DeveloperService;
+import ua.epam.service.serviceImpl.DeveloperServiceImpl;
 
 import java.util.List;
 
+@Log4j
 @Controller
 @RequestMapping("/api/v1/developer")
 public class DeveloperController {
@@ -24,11 +27,11 @@ public class DeveloperController {
 
     @GetMapping
     @ResponseBody
-    public String getDevelopers(@RequestParam("id") Long id) {
+    public String getDevelopers(@RequestParam(value = "id", required = false) Long id) {
         StringBuilder stringBuilder = new StringBuilder();
         if (id == null) {
             List<Developer> developers = developerService.getAll();
-            stringBuilder.append(gson.toJson(developers.toArray()));
+            stringBuilder.append(gson.toJson(developers));
         }
         else {
             Developer developer = developerService.getById(id);

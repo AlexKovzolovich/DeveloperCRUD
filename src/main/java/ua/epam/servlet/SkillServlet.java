@@ -1,16 +1,14 @@
 package ua.epam.servlet;
 
 import com.google.gson.Gson;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import lombok.extern.log4j.Log4j;
 import ua.epam.exceptions.PersistException;
 import ua.epam.mapper.SkillMapper;
 import ua.epam.model.Skill;
 import ua.epam.repository.jdbc.SkillRepositoryJdbcImpl;
-import ua.epam.service.SkillService;
+import ua.epam.service.serviceImpl.SkillServiceImpl;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,18 +16,18 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(name = "SkillServlet", urlPatterns = "/api/v1/skill")
+@Log4j
 public class SkillServlet extends HttpServlet {
-    private SkillService skillService;
-    private Gson gson;
+    private SkillServiceImpl skillService;
+    private final Gson gson = new Gson();
 
-    public SkillServlet(SkillService skillService) {
-        this.skillService = skillService;
-        this.gson = new Gson();
+    {
+        try {
+            skillService = new SkillServiceImpl(new SkillRepositoryJdbcImpl(new SkillMapper()));
+        } catch (PersistException e) {
+            log.error(e);
+        }
     }
-
-    @Autowired
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

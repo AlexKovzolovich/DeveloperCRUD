@@ -14,7 +14,7 @@ public class QueryHandlerStorage {
                 new QueryHandler() {
                     @Override
                     public String getSelectAllQuery() {
-                        return "SELECT accounts.id, accounts.data, account_status.status \n" +
+                        return "SELECT accounts.id, accounts.data, accounts.status \n" +
                                 "FROM accounts JOIN account_status ON accounts.status = account_status.id";
                     }
 

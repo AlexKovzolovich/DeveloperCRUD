@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import ua.epam.model.Account;
 import ua.epam.service.AccountService;
+import ua.epam.service.serviceImpl.AccountServiceImpl;
 
 import java.util.List;
 
@@ -24,11 +25,11 @@ public class AccountController {
 
     @GetMapping
     @ResponseBody
-    public String getAccounts(@RequestParam("id") Long id) {
+    public String getAccounts(@RequestParam(value = "id", required = false) Long id) {
         StringBuilder stringBuilder = new StringBuilder();
         if (id == null) {
             List<Account> accounts = accountService.getAll();
-            stringBuilder.append(gson.toJson(accounts.toArray()));
+            stringBuilder.append(gson.toJson(accounts));
         }
         else {
             Account account = accountService.getById(id);

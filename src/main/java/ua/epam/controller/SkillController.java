@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import ua.epam.model.Skill;
 import ua.epam.service.SkillService;
+import ua.epam.service.serviceImpl.SkillServiceImpl;
 
 import java.util.List;
 
@@ -25,14 +26,16 @@ public class SkillController {
 
     @GetMapping
     @ResponseBody
-    public String getSkills(@RequestParam("id") Long id) {
+    public String getSkills(@RequestParam(value = "id", required = false) Long id) {
         StringBuilder stringBuilder = new StringBuilder();
         if (id == null) {
             List<Skill> skills = skillService.getAll();
-            stringBuilder.append(gson.toJson(skills.toArray()));
+            System.out.println(skills);
+            stringBuilder.append(gson.toJson(skills));
         }
         else {
             Skill skill = skillService.getById(id);
+            System.out.println("id: " + id + " skill: " + skill);
             stringBuilder.append(skill);
         }
 

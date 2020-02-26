@@ -1,13 +1,16 @@
 package ua.epam.servlet;
 
 import com.google.gson.Gson;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import lombok.extern.log4j.Log4j;
+import ua.epam.exceptions.PersistException;
+import ua.epam.mapper.AccountMapper;
+import ua.epam.mapper.AccountStatusMapper;
 import ua.epam.model.Account;
-import ua.epam.service.AccountService;
+import ua.epam.repository.jdbc.AccountRepositoryJdbcImpl;
+import ua.epam.repository.jdbc.AccountStatusRepositoryJdbcImpl;
+import ua.epam.service.serviceImpl.AccountServiceImpl;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,15 +18,20 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(name = "AccountServlet", urlPatterns = "/api/v1/account")
-public class AccountServlet extends HttpServlet {
-    private AccountService accountService;
-    private Gson gson;
+@Log4j
 
-    @Autowired
-    public AccountServlet(AccountService accountService) {
-        this.accountService = accountService;
-        this.gson = new Gson();
+public class AccountServlet extends HttpServlet {
+    private AccountServiceImpl accountService;
+    private final Gson gson = new Gson();
+
+    {
+        try {
+            accountService = new AccountServiceImpl(new AccountRepositoryJdbcImpl(
+                    new AccountMapper(new AccountStatusRepositoryJdbcImpl(
+                            new AccountStatusMapper()))));
+        } catch (PersistException e) {
+            log.error(e);
+        }
     }
 
     @Override

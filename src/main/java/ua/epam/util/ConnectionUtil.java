@@ -30,10 +30,15 @@ public class ConnectionUtil {
         } catch (IOException e) {
             log.error("", e);
         }
-        dataSource.setDriverClassName(properties.getProperty("database.driver"));
+        /*dataSource.setDriverClassName(properties.getProperty("database.driver"));
         dataSource.setUrl(properties.getProperty("database.url"));
         dataSource.setUsername(properties.getProperty("database.user"));
         dataSource.setPassword(properties.getProperty("database.password"));
+        isInitialized = true;*/
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://fojvtycq53b2f2kx.chr7pe7iynqr.eu-west-1.rds.amazonaws.com/owapv3xvgqrjk3py");
+        dataSource.setUsername("ra2qoz0yg0c3b41w");
+        dataSource.setPassword("blap8bjsz5kvg4pp");
         isInitialized = true;
     }
 
