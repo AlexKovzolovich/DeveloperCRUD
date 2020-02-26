@@ -1,13 +1,12 @@
 package ua.epam.controller;
 
-import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import ua.epam.model.Skill;
 import ua.epam.service.SkillService;
-import ua.epam.service.serviceImpl.SkillServiceImpl;
 
 import java.util.List;
 
@@ -16,53 +15,37 @@ import java.util.List;
 @RequestMapping("/skill")
 public class SkillController {
     private SkillService skillService;
-    private final Gson gson = new Gson();
-    private final String redirectToGet ="redirect:/skill";
 
     @Autowired
     public SkillController(SkillService skillService) {
         this.skillService = skillService;
     }
 
-    @GetMapping
-    @ResponseBody
-    public String getSkills(@RequestParam(value = "id", required = false) Long id) {
-        StringBuilder stringBuilder = new StringBuilder();
-        if (id == null) {
-            List<Skill> skills = skillService.getAll();
-            System.out.println(skills);
-            stringBuilder.append(gson.toJson(skills));
-        }
-        else {
-            Skill skill = skillService.getById(id);
-            System.out.println("id: " + id + " skill: " + skill);
-            stringBuilder.append(skill);
-        }
+    @GetMapping(params = "id")
+    public @ResponseBody Skill getSkill(Long id) {
+        return skillService.getById(id);
+    }
 
-        return stringBuilder.toString();
+    @GetMapping
+    public @ResponseBody List<Skill> getSkills() {
+        return skillService.getAll();
     }
 
     @PostMapping
-    public String postSkill(HttpEntity<String> httpEntity) {
-        String json = httpEntity.getBody();
-        Skill skill = gson.fromJson(json, Skill.class);
+    public ResponseEntity postSkill(@RequestBody Skill skill) {
         skillService.save(skill);
-        return redirectToGet;
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 
     @PutMapping
-    public String putSkill(HttpEntity<String> httpEntity) {
-        String json = httpEntity.getBody();
-        Skill skill = gson.fromJson(json, Skill.class);
+    public ResponseEntity putSkill(@RequestBody Skill skill) {
         skillService.update(skill);
-        return redirectToGet;
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @DeleteMapping
-    public String deleteSkill(HttpEntity<String> httpEntity) {
-        String json = httpEntity.getBody();
-        Skill skill = gson.fromJson(json, Skill.class);
+    public ResponseEntity deleteSkill(@RequestBody Skill skill) {
         skillService.delete(skill);
-        return redirectToGet;
+        return new ResponseEntity(HttpStatus.OK);
     }
 }

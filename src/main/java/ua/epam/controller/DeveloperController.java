@@ -1,14 +1,13 @@
 package ua.epam.controller;
 
-import com.google.gson.Gson;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import ua.epam.model.Developer;
 import ua.epam.service.DeveloperService;
-import ua.epam.service.serviceImpl.DeveloperServiceImpl;
 
 import java.util.List;
 
@@ -17,51 +16,37 @@ import java.util.List;
 @RequestMapping("/developer")
 public class DeveloperController {
     private DeveloperService developerService;
-    private final Gson gson = new Gson();
-    private final String redirectToGet = "redirect:/developer";
 
     @Autowired
     public DeveloperController(DeveloperService developerService) {
         this.developerService = developerService;
     }
 
-    @GetMapping
-    @ResponseBody
-    public String getDevelopers(@RequestParam(value = "id", required = false) Long id) {
-        StringBuilder stringBuilder = new StringBuilder();
-        if (id == null) {
-            List<Developer> developers = developerService.getAll();
-            stringBuilder.append(gson.toJson(developers));
-        }
-        else {
-            Developer developer = developerService.getById(id);
-            stringBuilder.append(gson.toJson(developer));
-        }
+    @GetMapping(params = "id")
+    public @ResponseBody Developer getDeveloper(Long id) {
+        return developerService.getById(id);
+    }
 
-        return stringBuilder.toString();
+    @GetMapping
+    public @ResponseBody List<Developer> getDevelopers() {
+        return developerService.getAll();
     }
 
     @PostMapping
-    public String postDeveloper(HttpEntity<String> httpEntity) {
-        String json = httpEntity.getBody();
-        Developer developer = gson.fromJson(json, Developer.class);
+    public ResponseEntity postDeveloper(@RequestBody Developer developer) {
         developerService.save(developer);
-        return redirectToGet;
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @PutMapping
-    public String putMapping(HttpEntity<String> httpEntity) {
-        String json = httpEntity.getBody();
-        Developer developer = gson.fromJson(json, Developer.class);
+    public ResponseEntity putMapping(@RequestBody Developer developer) {
         developerService.update(developer);
-        return redirectToGet;
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @DeleteMapping
-    public String deleteDeveloper(HttpEntity<String> httpEntity) {
-        String json = httpEntity.getBody();
-        Developer developer = gson.fromJson(json, Developer.class);
+    public ResponseEntity deleteDeveloper(@RequestBody Developer developer) {
         developerService.delete(developer);
-        return redirectToGet;
+        return new ResponseEntity(HttpStatus.OK);
     }
 }

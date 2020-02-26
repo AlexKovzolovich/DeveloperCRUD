@@ -1,8 +1,8 @@
 package ua.epam.controller;
 
-import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import ua.epam.model.Account;
@@ -14,51 +14,37 @@ import java.util.List;
 @RequestMapping("/account")
 public class AccountController {
     private AccountService accountService;
-    private final Gson gson = new Gson();
-    private final String redirectToGet = "redirect:/account";
 
     @Autowired
     public AccountController(AccountService accountService) {
         this.accountService = accountService;
     }
 
-    @GetMapping
-    @ResponseBody
-    public String getAccounts(@RequestParam(value = "id", required = false) Long id) {
-        StringBuilder stringBuilder = new StringBuilder();
-        if (id == null) {
-            List<Account> accounts = accountService.getAll();
-            stringBuilder.append(gson.toJson(accounts));
-        }
-        else {
-            Account account = accountService.getById(id);
-            stringBuilder.append(gson.toJson(account));
-        }
+    @GetMapping(params = "id")
+    public @ResponseBody Account getAccount(Long id) {
+        return accountService.getById(id);
+    }
 
-        return stringBuilder.toString();
+    @GetMapping
+    public @ResponseBody List<Account> getAccounts() {
+        return accountService.getAll();
     }
 
     @PostMapping
-    public String postAccount(HttpEntity<String> httpEntity) {
-        String json = httpEntity.getBody();
-        Account account = gson.fromJson(json, Account.class);
+    public ResponseEntity postAccount(@RequestBody Account account) {
         accountService.save(account);
-        return redirectToGet;
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 
     @PutMapping
-    public String putAccount(HttpEntity<String> httpEntity) {
-        String json = httpEntity.getBody();
-        Account account = gson.fromJson(json, Account.class);
+    public ResponseEntity putAccount(@RequestBody Account account) {
         accountService.update(account);
-        return redirectToGet;
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @DeleteMapping
-    public String deleteAccount(HttpEntity<String> httpEntity) {
-        String json = httpEntity.getBody();
-        Account account = gson.fromJson(json, Account.class);
+    public ResponseEntity deleteAccount(@RequestBody Account account) {
         accountService.delete(account);
-        return redirectToGet;
+        return new ResponseEntity(HttpStatus.OK);
     }
 }
