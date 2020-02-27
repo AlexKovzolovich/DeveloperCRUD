@@ -24,44 +24,22 @@ public class AccountServiceImpl implements AccountService {
     }
 
     public Account getById(Long id) {
-        try {
-            return accountRepository.getById(id);
-        } catch (PersistException e) {
-            log.error("Receiving account with id=" + id, e);
-        }
-        return null;
+        return accountRepository.getById(id);
     }
 
     public List<Account> getAll() {
-        try {
-            return accountRepository.getAll();
-        } catch (PersistException e) {
-            log.error("Receiving all accounts", e);
-        }
-        return null;
+        return accountRepository.getAll();
     }
 
     public void save(Account account) {
-        try {
-            accountRepository.save(account);
-        } catch (PersistException e) {
-            log.error("Saving account id=" + account.getId(), e);
-        }
+        accountRepository.save(account);
     }
 
     public void delete(Account account) {
-        try {
-            accountRepository.delete(account);
-        } catch (PersistException e) {
-            log.error("Deleting account id=" + account.getId(), e);
-        }
+        accountRepository.delete(account);
     }
 
     public void update(Account account) {
-        try {
-            accountRepository.update(account);
-        } catch (PersistException e) {
-            log.error("Updating account id=" + account.getId(), e);
-        }
+        accountRepository.update(account);
     }
 }

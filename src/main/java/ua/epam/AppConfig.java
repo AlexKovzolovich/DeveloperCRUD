@@ -1,6 +1,5 @@
 package ua.epam;
 
-import lombok.extern.log4j.Log4j;
 import org.apache.log4j.Logger;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.BeansException;
@@ -8,7 +7,6 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -24,8 +22,9 @@ import java.util.Properties;
 @Configuration
 @EnableWebMvc
 @ComponentScan("ua.epam")
-@Log4j
 public class AppConfig {
+
+    private static final Logger log = Logger.getLogger(AppConfig.class);
 
     @Bean
     public DataSource dataSource() {
@@ -72,7 +71,9 @@ public class AppConfig {
     @Bean
     public BeanPostProcessor TimedAnnotationBeanPostProcessor() {
         return new BeanPostProcessor() {
+
             Map<String, Class> map = new HashMap<>();
+
             @Override
             public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
                 Class<?> beanClass = bean.getClass();

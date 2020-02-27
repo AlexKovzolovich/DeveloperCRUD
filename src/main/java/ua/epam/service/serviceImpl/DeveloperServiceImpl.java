@@ -24,44 +24,22 @@ public class DeveloperServiceImpl implements DeveloperService {
     }
 
     public Developer getById(Long id) {
-        try {
-            return developerRepository.getById(id);
-        } catch (PersistException e) {
-            log.error("Receiving developer id=" + id, e);
-        }
-        return null;
+        return developerRepository.getById(id);
     }
 
     public List<Developer> getAll() {
-        try {
-            return developerRepository.getAll();
-        } catch (PersistException e) {
-            log.error("Receiving all developers", e);
-        }
-        return null;
+        return developerRepository.getAll();
     }
 
     public void save(Developer developer) {
-        try {
-            developerRepository.save(developer);
-        } catch (PersistException e) {
-            log.error("Saving developer id=" + developer.getId(), e);
-        }
+        developerRepository.save(developer);
     }
 
     public void delete(Developer developer) {
-        try {
-            developerRepository.delete(developer);
-        } catch (PersistException e) {
-            log.error("Deleting developer id=" + developer.getId(), e);
-        }
+        developerRepository.delete(developer);
     }
 
     public void update(Developer developer) {
-        try {
-            developerRepository.update(developer);
-        } catch (PersistException e) {
-            log.error("Updating developer id=" + developer.getId(), e);
-        }
+        developerRepository.update(developer);
     }
 }

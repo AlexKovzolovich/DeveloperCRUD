@@ -24,44 +24,22 @@ public class SkillServiceImpl implements SkillService {
     }
 
     public Skill getById(Long id) {
-        try {
-            return skillRepository.getById(id);
-        } catch (PersistException e) {
-            log.error("Receiving skill with id=" + id, e);
-        }
-        return null;
+        return skillRepository.getById(id);
     }
 
     public List<Skill> getAll() {
-        try {
-            return skillRepository.getAll();
-        } catch (PersistException e) {
-            log.error("Receiving all skills", e);
-        }
-        return null;
+        return skillRepository.getAll();
     }
 
     public void save(Skill skill) {
-        try {
-            skillRepository.save(skill);
-        } catch (PersistException e) {
-            log.error("Saving skill id=" + skill.getId(),e);
-        }
+        skillRepository.save(skill);
     }
 
     public void delete(Skill skill) {
-        try {
-            skillRepository.delete(skill);
-        } catch (PersistException e) {
-            log.error("Deleting skill id=" + skill.getId(), e);
-        }
+        skillRepository.delete(skill);
     }
 
     public void update(Skill skill) {
-        try {
-            skillRepository.update(skill);
-        } catch (PersistException e) {
-            log.error("Updating skill id=" + skill.getId(), e);
-        }
+        skillRepository.update(skill);
     }
 }

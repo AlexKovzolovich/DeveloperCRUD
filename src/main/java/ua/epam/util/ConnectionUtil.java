@@ -14,7 +14,7 @@ import java.util.Properties;
 public class ConnectionUtil {
     private final static BasicDataSource dataSource = new BasicDataSource();
     private final static Properties properties = new Properties();
-    private static String databaseProperties = "./src/main/resources/db/dataSource.properties";
+    private static String databaseProperties = "";
     private static volatile boolean isInitialized = false;
 
     public static void changeToTestMod() {

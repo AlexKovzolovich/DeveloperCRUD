@@ -1,0 +1,783 @@
+2020-02-27 18:32:59 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-02-27 18:32:59 TRACE HibernatePersistenceProvider:139 - Starting createContainerEntityManagerFactory : default
+2020-02-27 18:32:59 DEBUG LogHelper:102 - PersistenceUnitInfo [
+	name: default
+	persistence provider classname: null
+	classloader: ParallelWebappClassLoader
+  context: ROOT
+  delegate: false
+----------> Parent Classloader:
+jdk.internal.loader.ClassLoaders$AppClassLoader@3b764bce
+
+	excludeUnlistedClasses: true
+	JTA datasource: null
+	Non JTA datasource: org.springframework.jdbc.datasource.DriverManagerDataSource@1c008df2
+	Transaction type: RESOURCE_LOCAL
+	PU root URL: file:/C:/Users/Alex/IdeaProjects/DeveloperCRUDREST/target/classes/
+	Shared Cache Mode: UNSPECIFIED
+	Validation Mode: AUTO
+	Jar files URLs []
+	Managed classes names [
+		ua.epam.model.Account
+		ua.epam.model.AccountStatus
+		ua.epam.model.BasicEntity
+		ua.epam.model.Skill]
+	Mapping files names []
+	Properties []
+2020-02-27 18:32:59 DEBUG IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+2020-02-27 18:32:59 DEBUG IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+2020-02-27 18:32:59 DEBUG IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [Cache71] -> [org.hibernate.dialect.Cache71Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [CUBRID] -> [org.hibernate.dialect.CUBRIDDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [DB2] -> [org.hibernate.dialect.DB2Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [DB2390] -> [org.hibernate.dialect.DB2390Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [DB2390V8] -> [org.hibernate.dialect.DB2390V8Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [DB2400] -> [org.hibernate.dialect.DB2400Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [DB2400V7R3] -> [org.hibernate.dialect.DB2400V7R3Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [DerbyTenFive] -> [org.hibernate.dialect.DerbyTenFiveDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [DerbyTenSix] -> [org.hibernate.dialect.DerbyTenSixDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [DerbyTenSeven] -> [org.hibernate.dialect.DerbyTenSevenDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [Firebird] -> [org.hibernate.dialect.FirebirdDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [FrontBase] -> [org.hibernate.dialect.FrontBaseDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [H2] -> [org.hibernate.dialect.H2Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [HANAColumnStore] -> [org.hibernate.dialect.HANAColumnStoreDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [HANARowStore] -> [org.hibernate.dialect.HANARowStoreDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [HSQL] -> [org.hibernate.dialect.HSQLDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [Informix] -> [org.hibernate.dialect.InformixDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [Ingres] -> [org.hibernate.dialect.IngresDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [Ingres9] -> [org.hibernate.dialect.Ingres9Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [Ingres10] -> [org.hibernate.dialect.Ingres10Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [Interbase] -> [org.hibernate.dialect.InterbaseDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [JDataStore] -> [org.hibernate.dialect.JDataStoreDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [Mckoi] -> [org.hibernate.dialect.MckoiDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [MimerSQL] -> [org.hibernate.dialect.MimerSQLDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [MySQL5] -> [org.hibernate.dialect.MySQL5Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [MySQL5InnoDB] -> [org.hibernate.dialect.MySQL5InnoDBDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [MySQL57InnoDB] -> [org.hibernate.dialect.MySQL57InnoDBDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [MySQL57] -> [org.hibernate.dialect.MySQL57Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [MySQL8] -> [org.hibernate.dialect.MySQL8Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [Oracle8i] -> [org.hibernate.dialect.Oracle8iDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [Oracle9i] -> [org.hibernate.dialect.Oracle9iDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [Oracle10g] -> [org.hibernate.dialect.Oracle10gDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [Pointbase] -> [org.hibernate.dialect.PointbaseDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [PostgresPlus] -> [org.hibernate.dialect.PostgresPlusDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [PostgreSQL81] -> [org.hibernate.dialect.PostgreSQL81Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [PostgreSQL82] -> [org.hibernate.dialect.PostgreSQL82Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [PostgreSQL9] -> [org.hibernate.dialect.PostgreSQL9Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [Progress] -> [org.hibernate.dialect.ProgressDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [SAPDB] -> [org.hibernate.dialect.SAPDBDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [SQLServer] -> [org.hibernate.dialect.SQLServerDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [SQLServer2005] -> [org.hibernate.dialect.SQLServer2005Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [SQLServer2008] -> [org.hibernate.dialect.SQLServer2008Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [Sybase11] -> [org.hibernate.dialect.Sybase11Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [SybaseAnywhere] -> [org.hibernate.dialect.SybaseAnywhereDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [SybaseASE15] -> [org.hibernate.dialect.SybaseASE15Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [SybaseASE157] -> [org.hibernate.dialect.SybaseASE157Dialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [Teradata] -> [org.hibernate.dialect.TeradataDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [TimesTen] -> [org.hibernate.dialect.TimesTenDialect]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [Atomikos] -> [org.hibernate.engine.transaction.jta.platform.internal.AtomikosJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.service.jta.platform.internal.AtomikosJtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.AtomikosJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [Borland] -> [org.hibernate.engine.transaction.jta.platform.internal.BorlandEnterpriseServerJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.service.jta.platform.internal.BorlandEnterpriseServerJtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.BorlandEnterpriseServerJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [Bitronix] -> [org.hibernate.engine.transaction.jta.platform.internal.BitronixJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.service.jta.platform.internal.BitronixJtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.BitronixJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [JBossAS] -> [org.hibernate.engine.transaction.jta.platform.internal.JBossAppServerJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.JBossAppServerJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [JBossTS] -> [org.hibernate.engine.transaction.jta.platform.internal.JBossStandAloneJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.service.jta.platform.internal.JBossStandAloneJtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.JBossStandAloneJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [JOnAS] -> [org.hibernate.engine.transaction.jta.platform.internal.JOnASJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.service.jta.platform.internal.JOnASJtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.JOnASJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [JOTM] -> [org.hibernate.engine.transaction.jta.platform.internal.JOTMJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.service.jta.platform.internal.JOTMJtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.JOTMJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [JRun4] -> [org.hibernate.engine.transaction.jta.platform.internal.JRun4JtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.service.jta.platform.internal.JRun4JtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.JRun4JtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [OC4J] -> [org.hibernate.engine.transaction.jta.platform.internal.OC4JJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.service.jta.platform.internal.OC4JJtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.OC4JJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [Orion] -> [org.hibernate.engine.transaction.jta.platform.internal.OrionJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.service.jta.platform.internal.OrionJtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.OrionJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [Resin] -> [org.hibernate.engine.transaction.jta.platform.internal.ResinJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.service.jta.platform.internal.ResinJtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.ResinJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [SapNetWeaver] -> [org.hibernate.engine.transaction.jta.platform.internal.SapNetWeaverJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.service.jta.platform.internal.SapNetWeaverJtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.SapNetWeaverJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [SunOne] -> [org.hibernate.engine.transaction.jta.platform.internal.SunOneJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.service.jta.platform.internal.SunOneJtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.SunOneJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [Weblogic] -> [org.hibernate.engine.transaction.jta.platform.internal.WeblogicJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.service.jta.platform.internal.WeblogicJtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.WeblogicJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [WebSphereLiberty] -> [org.hibernate.engine.transaction.jta.platform.internal.WebSphereLibertyJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.engine.transaction.jta.platform.internal.WebSphereLibertyJtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.WebSphereLibertyJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [WebSphere] -> [org.hibernate.engine.transaction.jta.platform.internal.WebSphereJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.service.jta.platform.internal.WebSphereJtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.WebSphereJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [WebSphereExtended] -> [org.hibernate.engine.transaction.jta.platform.internal.WebSphereExtendedJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform] : [org.hibernate.service.jta.platform.internal.WebSphereExtendedJtaPlatform] -> [org.hibernate.engine.transaction.jta.platform.internal.WebSphereExtendedJtaPlatform]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.resource.transaction.spi.TransactionCoordinatorBuilder] : [jdbc] -> [org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorBuilderImpl]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.resource.transaction.spi.TransactionCoordinatorBuilder] : [jta] -> [org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorBuilderImpl]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.resource.transaction.spi.TransactionCoordinatorBuilder] : [org.hibernate.transaction.JDBCTransactionFactory] -> [org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorBuilderImpl]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.resource.transaction.spi.TransactionCoordinatorBuilder] : [org.hibernate.transaction.JTATransactionFactory] -> [org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorBuilderImpl]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.resource.transaction.spi.TransactionCoordinatorBuilder] : [org.hibernate.transaction.CMTTransactionFactory] -> [org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorBuilderImpl]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.hql.spi.id.MultiTableBulkIdStrategy] : [persistent] -> [org.hibernate.hql.spi.id.persistent.PersistentTableBulkIdStrategy]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.hql.spi.id.MultiTableBulkIdStrategy] : [global_temporary] -> [org.hibernate.hql.spi.id.global.GlobalTemporaryTableBulkIdStrategy]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.hql.spi.id.MultiTableBulkIdStrategy] : [local_temporary] -> [org.hibernate.hql.spi.id.local.LocalTemporaryTableBulkIdStrategy]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.boot.model.naming.ImplicitNamingStrategy] : [default] -> [org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.boot.model.naming.ImplicitNamingStrategy] : [jpa] -> [org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.boot.model.naming.ImplicitNamingStrategy] : [legacy-jpa] -> [org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.boot.model.naming.ImplicitNamingStrategy] : [legacy-hbm] -> [org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.boot.model.naming.ImplicitNamingStrategy] : [component-path] -> [org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.cache.spi.CacheKeysFactory] : [default] -> [org.hibernate.cache.internal.DefaultCacheKeysFactory]
+2020-02-27 18:32:59 TRACE StrategySelectorImpl:70 - Registering named strategy selector [org.hibernate.cache.spi.CacheKeysFactory] : [simple] -> [org.hibernate.cache.internal.SimpleCacheKeysFactory]
+2020-02-27 18:32:59 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-02-27 18:32:59 DEBUG Environment:199 - HHH000206: hibernate.properties not found
+2020-02-27 18:32:59 DEBUG ServiceBinding:68 - Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+2020-02-27 18:32:59 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.engine.config.spi.ConfigurationService]
+2020-02-27 18:32:59 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.cache.spi.RegionFactory]
+2020-02-27 18:32:59 DEBUG RegionFactoryInitiator:118 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+2020-02-27 18:32:59 DEBUG RegionFactoryInitiator:49 - Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+2020-02-27 18:32:59 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration boolean -> org.hibernate.type.BooleanType@4d0a7991
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration boolean -> org.hibernate.type.BooleanType@4d0a7991
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@4d0a7991
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@501d5ca1
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@6dcc02df
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration yes_no -> org.hibernate.type.YesNoType@1d730cd8
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration byte -> org.hibernate.type.ByteType@6f644c04
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration byte -> org.hibernate.type.ByteType@6f644c04
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@6f644c04
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration character -> org.hibernate.type.CharacterType@1171dc66
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration char -> org.hibernate.type.CharacterType@1171dc66
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@1171dc66
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration short -> org.hibernate.type.ShortType@44729b0b
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration short -> org.hibernate.type.ShortType@44729b0b
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@44729b0b
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration integer -> org.hibernate.type.IntegerType@65fbdfa5
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration int -> org.hibernate.type.IntegerType@65fbdfa5
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@65fbdfa5
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration long -> org.hibernate.type.LongType@5cea3108
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration long -> org.hibernate.type.LongType@5cea3108
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@5cea3108
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration float -> org.hibernate.type.FloatType@1bd86216
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration float -> org.hibernate.type.FloatType@1bd86216
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@1bd86216
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration double -> org.hibernate.type.DoubleType@70786f8b
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration double -> org.hibernate.type.DoubleType@70786f8b
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@70786f8b
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@5bbd667b
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@5bbd667b
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@67cee623
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@67cee623
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration string -> org.hibernate.type.StringType@79a7cd56
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.String -> org.hibernate.type.StringType@79a7cd56
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@5a2f3008
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@a777d52
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration url -> org.hibernate.type.UrlType@5802e5e7
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@5802e5e7
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration Duration -> org.hibernate.type.DurationType@5dd06b9a
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.time.Duration -> org.hibernate.type.DurationType@5dd06b9a
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration Instant -> org.hibernate.type.InstantType@a33d111
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.time.Instant -> org.hibernate.type.InstantType@a33d111
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@20dadf86
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@20dadf86
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration LocalDate -> org.hibernate.type.LocalDateType@6dce4224
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@6dce4224
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@463d9bb4
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@463d9bb4
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@3c3ed21
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@3c3ed21
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@329411e1
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@329411e1
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@7a306d77
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@7a306d77
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration date -> org.hibernate.type.DateType@5d5b6b28
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@5d5b6b28
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration time -> org.hibernate.type.TimeType@442a367f
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@442a367f
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration timestamp -> org.hibernate.type.TimestampType@40567776
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@40567776
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@40567776
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@493d9d4
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration calendar -> org.hibernate.type.CalendarType@44a338f6
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@44a338f6
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@44a338f6
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@110030f3
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@6d3e605a
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration locale -> org.hibernate.type.LocaleType@478775b0
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@478775b0
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration currency -> org.hibernate.type.CurrencyType@291b35bf
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@291b35bf
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@4e18cbe1
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@4e18cbe1
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration class -> org.hibernate.type.ClassType@6264cdce
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@6264cdce
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@6b3247ed
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@6b3247ed
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@391884fd
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration binary -> org.hibernate.type.BinaryType@76a4007b
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration byte[] -> org.hibernate.type.BinaryType@76a4007b
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration [B -> org.hibernate.type.BinaryType@76a4007b
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@2232641
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@2232641
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@2232641
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration row_version -> org.hibernate.type.RowVersionType@3d007420
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration image -> org.hibernate.type.ImageType@3eff0124
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration characters -> org.hibernate.type.CharArrayType@bcb1c97
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration char[] -> org.hibernate.type.CharArrayType@bcb1c97
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration [C -> org.hibernate.type.CharArrayType@bcb1c97
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@7a83250f
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@7a83250f
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@7a83250f
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration text -> org.hibernate.type.TextType@7b89301e
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration ntext -> org.hibernate.type.NTextType@24bf0bdc
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration blob -> org.hibernate.type.BlobType@7f77ad26
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@7f77ad26
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@3c4eccb2
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration clob -> org.hibernate.type.ClobType@2731b5e2
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@2731b5e2
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration nclob -> org.hibernate.type.NClobType@6c724807
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@6c724807
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@28b0c64b
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@dc69ab0
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration serializable -> org.hibernate.type.SerializableType@588399b3
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration object -> org.hibernate.type.ObjectType@19214be1
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@19214be1
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@2cefd3ff
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@51bf39ad
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@11786e6f
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@399fa27c
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@6b3dfe9b
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@43e7c000
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@11bed505
+2020-02-27 18:32:59 DEBUG BasicTypeRegistry:157 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@55f6190c
+2020-02-27 18:32:59 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.boot.cfgxml.spi.CfgXmlAccessService]
+2020-02-27 18:32:59 DEBUG BootstrapContextImpl:262 - Injecting JPA temp ClassLoader [org.springframework.instrument.classloading.SimpleThrowawayClassLoader@21da51eb] into BootstrapContext; was [null]
+2020-02-27 18:32:59 DEBUG ClassLoaderAccessImpl:45 - ClassLoaderAccessImpl#injectTempClassLoader(org.springframework.instrument.classloading.SimpleThrowawayClassLoader@21da51eb) [was null]
+2020-02-27 18:32:59 DEBUG BootstrapContextImpl:272 - Injecting ScanEnvironment [org.hibernate.jpa.boot.internal.StandardJpaScanEnvironmentImpl@4badf1] into BootstrapContext; was [null]
+2020-02-27 18:32:59 DEBUG BootstrapContextImpl:267 - Injecting ScanOptions [org.hibernate.boot.archive.scan.internal.StandardScanOptions@3f7ed02f] into BootstrapContext; was [org.hibernate.boot.archive.scan.internal.StandardScanOptions@eff6ccd]
+2020-02-27 18:32:59 DEBUG BootstrapContextImpl:262 - Injecting JPA temp ClassLoader [null] into BootstrapContext; was [org.springframework.instrument.classloading.SimpleThrowawayClassLoader@21da51eb]
+2020-02-27 18:32:59 DEBUG ClassLoaderAccessImpl:45 - ClassLoaderAccessImpl#injectTempClassLoader(null) [was org.springframework.instrument.classloading.SimpleThrowawayClassLoader@21da51eb]
+2020-02-27 18:32:59 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.id.factory.spi.MutableIdentifierGeneratorFactory]
+2020-02-27 18:32:59 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+2020-02-27 18:32:59 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+2020-02-27 18:32:59 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+2020-02-27 18:32:59 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+2020-02-27 18:32:59 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+2020-02-27 18:32:59 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+2020-02-27 18:32:59 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+2020-02-27 18:32:59 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+2020-02-27 18:32:59 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+2020-02-27 18:32:59 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+2020-02-27 18:32:59 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+2020-02-27 18:32:59 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+2020-02-27 18:32:59 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+2020-02-27 18:32:59 DEBUG DefaultIdentifierGeneratorFactory:81 - Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+2020-02-27 18:32:59 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+2020-02-27 18:32:59 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.engine.jdbc.dialect.spi.DialectFactory]
+2020-02-27 18:32:59 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.engine.jdbc.dialect.spi.DialectResolver]
+2020-02-27 18:32:59 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.engine.jdbc.connections.spi.ConnectionProvider]
+2020-02-27 18:32:59 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.engine.jndi.spi.JndiService]
+2020-02-27 18:33:00 DEBUG JdbcEnvironmentInitiator:72 - Database ->
+       name : MySQL
+    version : 5.7.26-log
+      major : 5
+      minor : 7
+2020-02-27 18:33:00 DEBUG JdbcEnvironmentInitiator:83 - Driver ->
+       name : MySQL Connector/J
+    version : mysql-connector-java-8.0.15 (Revision: 79a4336f140499bd22dd07f02b708e163844e3d5)
+      major : 8
+      minor : 0
+2020-02-27 18:33:00 DEBUG JdbcEnvironmentInitiator:389 - JDBC version : 4.2
+2020-02-27 18:33:00 INFO  Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-02-27 18:33:00 DEBUG IdentifierHelperBuilder:113 - JDBC driver metadata reported database stores quoted identifiers in more than one case
+2020-02-27 18:33:00 DEBUG IdentifierHelperBuilder:187 - IdentifierCaseStrategy for both quoted and unquoted identifiers was set to the same strategy [LOWER]; that will likely lead to problems in schema update and validation if using quoted identifiers
+2020-02-27 18:33:00 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [owapv3xvgqrjk3py]
+2020-02-27 18:33:00 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [null]
+2020-02-27 18:33:00 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.engine.jdbc.spi.JdbcServices]
+2020-02-27 18:33:00 DEBUG Namespace:51 - Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+2020-02-27 18:33:00 DEBUG TypeConfiguration$Scope:152 - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@4062a311] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@c287545]
+2020-02-27 18:33:00 DEBUG AnnotationBinder:557 - Binding entity from annotated class: ua.epam.model.Account
+2020-02-27 18:33:00 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [DTYPE]
+2020-02-27 18:33:00 DEBUG Ejb3Column:213 - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+2020-02-27 18:33:00 DEBUG EntityBinder:430 - Import with entity name Account
+2020-02-27 18:33:00 TRACE InFlightMetadataCollectorImpl:725 - Import: Account -> ua.epam.model.Account
+2020-02-27 18:33:00 TRACE InFlightMetadataCollectorImpl:725 - Import: ua.epam.model.Account -> ua.epam.model.Account
+2020-02-27 18:33:00 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [accounts]
+2020-02-27 18:33:00 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [accounts]
+2020-02-27 18:33:00 DEBUG EntityBinder:873 - Bind entity ua.epam.model.Account on table accounts
+2020-02-27 18:33:00 TRACE AnnotationBinder:1644 - Processing annotations of ua.epam.model.Account.id
+2020-02-27 18:33:00 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [id]
+2020-02-27 18:33:00 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [id]
+2020-02-27 18:33:01 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(accounts), mappingColumn=id, insertable=true, updatable=true, unique=false}
+2020-02-27 18:33:01 DEBUG PropertyBinder:175 - MetadataSourceProcessor property id with lazy=false
+2020-02-27 18:33:01 DEBUG AbstractPropertyHolder:94 - Attempting to locate auto-apply AttributeConverter for property [ua.epam.model.Account:id]
+2020-02-27 18:33:01 DEBUG SimpleValueBinder:411 - building SimpleValue for id
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [id]
+2020-02-27 18:33:01 DEBUG PropertyBinder:266 - Building property id
+2020-02-27 18:33:01 TRACE PropertyBinder:329 - Cascading id with null
+2020-02-27 18:33:01 DEBUG BinderHelper:644 - #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, identity, , ...)
+2020-02-27 18:33:01 TRACE AnnotationBinder:2457 - Bind @Id on id
+2020-02-27 18:33:01 TRACE AnnotationBinder:1644 - Processing annotations of ua.epam.model.Account.data
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [data]
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [data]
+2020-02-27 18:33:01 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(accounts), mappingColumn=data, insertable=true, updatable=true, unique=false}
+2020-02-27 18:33:01 DEBUG PropertyBinder:175 - MetadataSourceProcessor property data with lazy=false
+2020-02-27 18:33:01 DEBUG AbstractPropertyHolder:94 - Attempting to locate auto-apply AttributeConverter for property [ua.epam.model.Account:data]
+2020-02-27 18:33:01 DEBUG SimpleValueBinder:411 - building SimpleValue for data
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [data]
+2020-02-27 18:33:01 DEBUG PropertyBinder:266 - Building property data
+2020-02-27 18:33:01 TRACE PropertyBinder:329 - Cascading data with null
+2020-02-27 18:33:01 TRACE AnnotationBinder:1644 - Processing annotations of ua.epam.model.Account.status
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [status]
+2020-02-27 18:33:01 DEBUG Ejb3Column:213 - Binding column: Ejb3JoinColumn{logicalColumnName='status', referencedColumn='', mappedBy=''}
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [status]
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [status]
+2020-02-27 18:33:01 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(accounts), mappingColumn=status, insertable=true, updatable=true, unique=false}
+2020-02-27 18:33:01 DEBUG PropertyBinder:266 - Building property status
+2020-02-27 18:33:01 TRACE PropertyBinder:329 - Cascading status with none
+2020-02-27 18:33:01 DEBUG AnnotationBinder:557 - Binding entity from annotated class: ua.epam.model.AccountStatus
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [DTYPE]
+2020-02-27 18:33:01 DEBUG Ejb3Column:213 - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+2020-02-27 18:33:01 DEBUG EntityBinder:430 - Import with entity name AccountStatus
+2020-02-27 18:33:01 TRACE InFlightMetadataCollectorImpl:725 - Import: AccountStatus -> ua.epam.model.AccountStatus
+2020-02-27 18:33:01 TRACE InFlightMetadataCollectorImpl:725 - Import: ua.epam.model.AccountStatus -> ua.epam.model.AccountStatus
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [account_status]
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [account_status]
+2020-02-27 18:33:01 DEBUG EntityBinder:873 - Bind entity ua.epam.model.AccountStatus on table account_status
+2020-02-27 18:33:01 TRACE AnnotationBinder:1644 - Processing annotations of ua.epam.model.AccountStatus.id
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [id]
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [id]
+2020-02-27 18:33:01 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(account_status), mappingColumn=id, insertable=true, updatable=true, unique=false}
+2020-02-27 18:33:01 DEBUG PropertyBinder:175 - MetadataSourceProcessor property id with lazy=false
+2020-02-27 18:33:01 DEBUG AbstractPropertyHolder:94 - Attempting to locate auto-apply AttributeConverter for property [ua.epam.model.AccountStatus:id]
+2020-02-27 18:33:01 DEBUG SimpleValueBinder:411 - building SimpleValue for id
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [id]
+2020-02-27 18:33:01 DEBUG PropertyBinder:266 - Building property id
+2020-02-27 18:33:01 TRACE PropertyBinder:329 - Cascading id with null
+2020-02-27 18:33:01 DEBUG BinderHelper:644 - #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, identity, , ...)
+2020-02-27 18:33:01 TRACE AnnotationBinder:2457 - Bind @Id on id
+2020-02-27 18:33:01 TRACE AnnotationBinder:1644 - Processing annotations of ua.epam.model.AccountStatus.status
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [status]
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [status]
+2020-02-27 18:33:01 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(account_status), mappingColumn=status, insertable=true, updatable=true, unique=false}
+2020-02-27 18:33:01 DEBUG PropertyBinder:175 - MetadataSourceProcessor property status with lazy=false
+2020-02-27 18:33:01 DEBUG AbstractPropertyHolder:94 - Attempting to locate auto-apply AttributeConverter for property [ua.epam.model.AccountStatus:status]
+2020-02-27 18:33:01 DEBUG SimpleValueBinder:411 - building SimpleValue for status
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [status]
+2020-02-27 18:33:01 DEBUG PropertyBinder:266 - Building property status
+2020-02-27 18:33:01 TRACE PropertyBinder:329 - Cascading status with null
+2020-02-27 18:33:01 DEBUG AnnotationBinder:557 - Binding entity from annotated class: ua.epam.model.Skill
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [DTYPE]
+2020-02-27 18:33:01 DEBUG Ejb3Column:213 - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+2020-02-27 18:33:01 DEBUG EntityBinder:430 - Import with entity name Skill
+2020-02-27 18:33:01 TRACE InFlightMetadataCollectorImpl:725 - Import: Skill -> ua.epam.model.Skill
+2020-02-27 18:33:01 TRACE InFlightMetadataCollectorImpl:725 - Import: ua.epam.model.Skill -> ua.epam.model.Skill
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [skills]
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [skills]
+2020-02-27 18:33:01 DEBUG EntityBinder:873 - Bind entity ua.epam.model.Skill on table skills
+2020-02-27 18:33:01 TRACE AnnotationBinder:1644 - Processing annotations of ua.epam.model.Skill.id
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [id]
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [id]
+2020-02-27 18:33:01 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(skills), mappingColumn=id, insertable=true, updatable=true, unique=false}
+2020-02-27 18:33:01 DEBUG PropertyBinder:175 - MetadataSourceProcessor property id with lazy=false
+2020-02-27 18:33:01 DEBUG AbstractPropertyHolder:94 - Attempting to locate auto-apply AttributeConverter for property [ua.epam.model.Skill:id]
+2020-02-27 18:33:01 DEBUG SimpleValueBinder:411 - building SimpleValue for id
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [id]
+2020-02-27 18:33:01 DEBUG PropertyBinder:266 - Building property id
+2020-02-27 18:33:01 TRACE PropertyBinder:329 - Cascading id with null
+2020-02-27 18:33:01 DEBUG BinderHelper:644 - #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, identity, , ...)
+2020-02-27 18:33:01 TRACE AnnotationBinder:2457 - Bind @Id on id
+2020-02-27 18:33:01 TRACE AnnotationBinder:1644 - Processing annotations of ua.epam.model.Skill.name
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [name]
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [name]
+2020-02-27 18:33:01 DEBUG Ejb3Column:213 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(skills), mappingColumn=name, insertable=true, updatable=true, unique=false}
+2020-02-27 18:33:01 DEBUG PropertyBinder:175 - MetadataSourceProcessor property name with lazy=false
+2020-02-27 18:33:01 DEBUG AbstractPropertyHolder:94 - Attempting to locate auto-apply AttributeConverter for property [ua.epam.model.Skill:name]
+2020-02-27 18:33:01 DEBUG SimpleValueBinder:411 - building SimpleValue for name
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [name]
+2020-02-27 18:33:01 DEBUG PropertyBinder:266 - Building property name
+2020-02-27 18:33:01 TRACE PropertyBinder:329 - Cascading name with null
+2020-02-27 18:33:01 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for id
+2020-02-27 18:33:01 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for data
+2020-02-27 18:33:01 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for id
+2020-02-27 18:33:01 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for status
+2020-02-27 18:33:01 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for id
+2020-02-27 18:33:01 DEBUG SimpleValueBinder:456 - Starting fillSimpleValue for name
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [status]
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [null]
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [status]
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [status]
+2020-02-27 18:33:01 DEBUG PrimaryKey:35 - Forcing column [id] to be non-null as it is part of the primary key for table [accounts]
+2020-02-27 18:33:01 DEBUG PrimaryKey:35 - Forcing column [id] to be non-null as it is part of the primary key for table [account_status]
+2020-02-27 18:33:01 DEBUG PrimaryKey:35 - Forcing column [id] to be non-null as it is part of the primary key for table [skills]
+2020-02-27 18:33:01 DEBUG InFlightMetadataCollectorImpl:1869 - Resolving reference to class: ua.epam.model.AccountStatus
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [status]
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [FK7yao41gfqb75p3pqswkaayybg]
+2020-02-27 18:33:01 DEBUG InFlightMetadataCollectorImpl:1869 - Resolving reference to class: ua.epam.model.AccountStatus
+2020-02-27 18:33:01 TRACE NormalizingIdentifierHelperImpl:61 - Normalizing identifier quoting [status]
+2020-02-27 18:33:01 TRACE BatchFetchStyle:51 - Interpreting BatchFetchStyle from setting : null
+2020-02-27 18:33:01 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.resource.transaction.spi.TransactionCoordinatorBuilder]
+2020-02-27 18:33:01 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.bytecode.spi.BytecodeProvider]
+2020-02-27 18:33:01 DEBUG SessionFactoryImpl:201 - Building session factory
+2020-02-27 18:33:01 DEBUG Settings:68 - SessionFactory name : null
+2020-02-27 18:33:01 DEBUG Settings:69 - Automatic flush during beforeCompletion(): enabled
+2020-02-27 18:33:01 DEBUG Settings:70 - Automatic session close at end of transaction: disabled
+2020-02-27 18:33:01 DEBUG Settings:72 - Statistics: disabled
+2020-02-27 18:33:01 DEBUG Settings:74 - Deleted entity synthetic identifier rollback: disabled
+2020-02-27 18:33:01 DEBUG Settings:75 - Default entity-mode: pojo
+2020-02-27 18:33:01 DEBUG Settings:76 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2020-02-27 18:33:01 DEBUG Settings:77 - Allow initialization of lazy state outside session : disabled
+2020-02-27 18:33:01 DEBUG Settings:79 - Using BatchFetchStyle : LEGACY
+2020-02-27 18:33:01 DEBUG Settings:80 - Default batch fetch size: -1
+2020-02-27 18:33:01 DEBUG Settings:81 - Maximum outer join fetch depth: 2
+2020-02-27 18:33:01 DEBUG Settings:82 - Default null ordering: NONE
+2020-02-27 18:33:01 DEBUG Settings:83 - Order SQL updates by primary key: disabled
+2020-02-27 18:33:01 DEBUG Settings:84 - Order SQL inserts for batching: disabled
+2020-02-27 18:33:01 DEBUG Settings:86 - multi-tenancy strategy : NONE
+2020-02-27 18:33:01 DEBUG Settings:88 - JTA Track by Thread: enabled
+2020-02-27 18:33:01 DEBUG Settings:90 - Query language substitutions: {}
+2020-02-27 18:33:01 DEBUG Settings:91 - Named query checking : enabled
+2020-02-27 18:33:01 DEBUG Settings:93 - Second-level cache: disabled
+2020-02-27 18:33:01 DEBUG Settings:94 - Second-level query cache: disabled
+2020-02-27 18:33:01 DEBUG Settings:95 - Second-level query cache factory: null
+2020-02-27 18:33:01 DEBUG Settings:96 - Second-level cache region prefix: null
+2020-02-27 18:33:01 DEBUG Settings:97 - Optimize second-level cache for minimal puts: disabled
+2020-02-27 18:33:01 DEBUG Settings:98 - Structured second-level cache entries: disabled
+2020-02-27 18:33:01 DEBUG Settings:99 - Second-level cache direct-reference entries: disabled
+2020-02-27 18:33:01 DEBUG Settings:100 - Automatic eviction of collection cache: disabled
+2020-02-27 18:33:01 DEBUG Settings:102 - JDBC batch size: 15
+2020-02-27 18:33:01 DEBUG Settings:103 - JDBC batch updates for versioned data: enabled
+2020-02-27 18:33:01 DEBUG Settings:104 - Scrollable result sets: enabled
+2020-02-27 18:33:01 DEBUG Settings:105 - Wrap result sets: disabled
+2020-02-27 18:33:01 DEBUG Settings:106 - JDBC3 getGeneratedKeys(): enabled
+2020-02-27 18:33:01 DEBUG Settings:107 - JDBC result set fetch size: null
+2020-02-27 18:33:01 DEBUG Settings:108 - Connection release mode: AFTER_TRANSACTION
+2020-02-27 18:33:01 DEBUG Settings:109 - Generate SQL with comments: disabled
+2020-02-27 18:33:01 DEBUG Settings:111 - JPA compliance - query : disabled
+2020-02-27 18:33:01 DEBUG Settings:112 - JPA compliance - closed-handling : disabled
+2020-02-27 18:33:01 DEBUG Settings:113 - JPA compliance - lists : disabled
+2020-02-27 18:33:01 DEBUG Settings:114 - JPA compliance - transactions : disabled
+2020-02-27 18:33:01 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.service.spi.SessionFactoryServiceRegistryFactory]
+2020-02-27 18:33:01 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.event.service.spi.EventListenerRegistry]
+2020-02-27 18:33:01 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.resource.beans.spi.ManagedBeanRegistry]
+2020-02-27 18:33:01 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.cache.spi.CacheImplementor]
+2020-02-27 18:33:01 DEBUG SessionFactoryImpl:256 - Session factory constructed with filter configurations : {}
+2020-02-27 18:33:01 DEBUG SessionFactoryImpl:257 - Instantiating session factory with properties: {sun.desktop=windows, awt.toolkit=sun.awt.windows.WToolkit, java.specification.version=9, file.encoding.pkg=sun.io, sun.cpu.isalist=amd64, sun.jnu.encoding=Cp1252, java.class.path=C:\Users\Alex\IdeaProjects\DeveloperCRUDREST\target\classes;C:\Users\Alex\.m2\repository\net\bytebuddy\byte-buddy\1.10.5\byte-buddy-1.10.5.jar;C:\Users\Alex\.m2\repository\org\mybatis\mybatis\3.4.6\mybatis-3.4.6.jar;C:\Users\Alex\.m2\repository\mysql\mysql-connector-java\8.0.15\mysql-connector-java-8.0.15.jar;C:\Users\Alex\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;C:\Users\Alex\.m2\repository\org\apache\commons\commons-dbcp2\2.7.0\commons-dbcp2-2.7.0.jar;C:\Users\Alex\.m2\repository\org\apache\commons\commons-pool2\2.7.0\commons-pool2-2.7.0.jar;C:\Users\Alex\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Alex\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\Alex\.m2\repository\org\liquibase\liquibase-core\3.8.5\liquibase-core-3.8.5.jar;C:\Users\Alex\.m2\repository\javax\xml\bind\jaxb-api\2.3.0\jaxb-api-2.3.0.jar;C:\Users\Alex\.m2\repository\org\slf4j\slf4j-api\1.7.28\slf4j-api-1.7.28.jar;C:\Users\Alex\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\Alex\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\Alex\.m2\repository\org\liquibase\liquibase-maven-plugin\3.8.5\liquibase-maven-plugin-3.8.5.jar;C:\Users\Alex\.m2\repository\org\apache\maven\maven-plugin-api\2.0\maven-plugin-api-2.0.jar;C:\Users\Alex\.m2\repository\org\apache\maven\maven-project\2.0\maven-project-2.0.jar;C:\Users\Alex\.m2\repository\org\apache\maven\maven-profile\2.0\maven-profile-2.0.jar;C:\Users\Alex\.m2\repository\org\apache\maven\maven-model\2.0\maven-model-2.0.jar;C:\Users\Alex\.m2\repository\org\apache\maven\maven-artifact-manager\2.0\maven-artifact-manager-2.0.jar;C:\Users\Alex\.m2\repository\org\apache\maven\maven-repository-metadata\2.0\maven-repository-metadata-2.0.jar;C:\Users\Alex\.m2\repository\org\apache\maven\wagon\wagon-provider-api\1.0-alpha-5\wagon-provider-api-1.0-alpha-5.jar;C:\Users\Alex\.m2\repository\org\codehaus\plexus\plexus-utils\1.0.4\plexus-utils-1.0.4.jar;C:\Users\Alex\.m2\repository\org\apache\maven\maven-artifact\2.0\maven-artifact-2.0.jar;C:\Users\Alex\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-8\plexus-container-default-1.0-alpha-8.jar;C:\Users\Alex\.m2\repository\classworlds\classworlds\1.1-alpha-2\classworlds-1.1-alpha-2.jar;C:\Users\Alex\.m2\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;C:\Users\Alex\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;C:\Users\Alex\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\8.5.50\tomcat-embed-core-8.5.50.jar;C:\Users\Alex\.m2\repository\org\apache\tomcat\tomcat-annotations-api\8.5.50\tomcat-annotations-api-8.5.50.jar;C:\Users\Alex\.m2\repository\org\apache\tomcat\embed\tomcat-embed-jasper\8.5.50\tomcat-embed-jasper-8.5.50.jar;C:\Users\Alex\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\8.5.50\tomcat-embed-el-8.5.50.jar;C:\Users\Alex\.m2\repository\org\eclipse\jdt\ecj\3.12.3\ecj-3.12.3.jar;C:\Users\Alex\.m2\repository\org\apache\tomcat\tomcat-jasper\8.5.50\tomcat-jasper-8.5.50.jar;C:\Users\Alex\.m2\repository\org\apache\tomcat\tomcat-servlet-api\8.5.50\tomcat-servlet-api-8.5.50.jar;C:\Users\Alex\.m2\repository\org\apache\tomcat\tomcat-juli\8.5.50\tomcat-juli-8.5.50.jar;C:\Users\Alex\.m2\repository\org\apache\tomcat\tomcat-el-api\8.5.50\tomcat-el-api-8.5.50.jar;C:\Users\Alex\.m2\repository\org\apache\tomcat\tomcat-api\8.5.50\tomcat-api-8.5.50.jar;C:\Users\Alex\.m2\repository\org\apache\tomcat\tomcat-util-scan\8.5.50\tomcat-util-scan-8.5.50.jar;C:\Users\Alex\.m2\repository\org\apache\tomcat\tomcat-util\8.5.50\tomcat-util-8.5.50.jar;C:\Users\Alex\.m2\repository\org\apache\tomcat\tomcat-jasper-el\8.5.50\tomcat-jasper-el-8.5.50.jar;C:\Users\Alex\.m2\repository\org\apache\tomcat\tomcat-jsp-api\8.5.50\tomcat-jsp-api-8.5.50.jar;C:\Users\Alex\.m2\repository\jstl\jstl\1.2\jstl-1.2.jar;C:\Users\Alex\.m2\repository\taglibs\standard\1.1.2\standard-1.1.2.jar;C:\Users\Alex\.m2\repository\org\springframework\spring-context\5.2.3.RELEASE\spring-context-5.2.3.RELEASE.jar;C:\Users\Alex\.m2\repository\org\springframework\spring-aop\5.2.3.RELEASE\spring-aop-5.2.3.RELEASE.jar;C:\Users\Alex\.m2\repository\org\springframework\spring-beans\5.2.3.RELEASE\spring-beans-5.2.3.RELEASE.jar;C:\Users\Alex\.m2\repository\org\springframework\spring-core\5.2.3.RELEASE\spring-core-5.2.3.RELEASE.jar;C:\Users\Alex\.m2\repository\org\springframework\spring-jcl\5.2.3.RELEASE\spring-jcl-5.2.3.RELEASE.jar;C:\Users\Alex\.m2\repository\org\springframework\spring-expression\5.2.3.RELEASE\spring-expression-5.2.3.RELEASE.jar;C:\Users\Alex\.m2\repository\org\springframework\spring-webmvc\5.2.3.RELEASE\spring-webmvc-5.2.3.RELEASE.jar;C:\Users\Alex\.m2\repository\org\springframework\spring-web\5.2.3.RELEASE\spring-web-5.2.3.RELEASE.jar;C:\Users\Alex\.m2\repository\org\springframework\spring-orm\5.2.3.RELEASE\spring-orm-5.2.3.RELEASE.jar;C:\Users\Alex\.m2\repository\org\springframework\spring-jdbc\5.2.3.RELEASE\spring-jdbc-5.2.3.RELEASE.jar;C:\Users\Alex\.m2\repository\org\springframework\spring-tx\5.2.3.RELEASE\spring-tx-5.2.3.RELEASE.jar;C:\Users\Alex\.m2\repository\org\springframework\data\spring-data-jpa\2.2.4.RELEASE\spring-data-jpa-2.2.4.RELEASE.jar;C:\Users\Alex\.m2\repository\org\springframework\data\spring-data-commons\2.2.4.RELEASE\spring-data-commons-2.2.4.RELEASE.jar;C:\Users\Alex\.m2\repository\org\aspectj\aspectjrt\1.9.5\aspectjrt-1.9.5.jar;C:\Users\Alex\.m2\repository\org\hibernate\hibernate-core\5.4.12.Final\hibernate-core-5.4.12.Final.jar;C:\Users\Alex\.m2\repository\org\jboss\logging\jboss-logging\3.3.2.Final\jboss-logging-3.3.2.Final.jar;C:\Users\Alex\.m2\repository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;C:\Users\Alex\.m2\repository\org\javassist\javassist\3.24.0-GA\javassist-3.24.0-GA.jar;C:\Users\Alex\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Alex\.m2\repository\org\jboss\spec\javax\transaction\jboss-transaction-api_1.2_spec\1.1.1.Final\jboss-transaction-api_1.2_spec-1.1.1.Final.jar;C:\Users\Alex\.m2\repository\org\jboss\jandex\2.1.1.Final\jandex-2.1.1.Final.jar;C:\Users\Alex\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Alex\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\Alex\.m2\repository\org\dom4j\dom4j\2.1.1\dom4j-2.1.1.jar;C:\Users\Alex\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.0.Final\hibernate-commons-annotations-5.1.0.Final.jar;C:\Users\Alex\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.1\jaxb-runtime-2.3.1.jar;C:\Users\Alex\.m2\repository\org\glassfish\jaxb\txw2\2.3.1\txw2-2.3.1.jar;C:\Users\Alex\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.7\istack-commons-runtime-3.0.7.jar;C:\Users\Alex\.m2\repository\org\jvnet\staxex\stax-ex\1.8\stax-ex-1.8.jar;C:\Users\Alex\.m2\repository\com\sun\xml\fastinfoset\FastInfoset\1.2.15\FastInfoset-1.2.15.jar, java.vm.vendor=Oracle Corporation, sun.arch.data.model=64, user.variant=, java.vendor.url=http://java.oracle.com/, catalina.useNaming=false, user.timezone=Europe/Helsinki, os.name=Windows 7, java.vm.specification.version=9, javax.persistence.validation.mode=AUTO, sun.java.launcher=SUN_STANDARD, user.country=RU, sun.boot.library.path=D:\Java\bin, sun.java.command=ua.epam.WebApp, javax.persistence.nonJtaDataSource=org.springframework.jdbc.datasource.DriverManagerDataSource@1c008df2, javax.persistence.sharedCache.mode=UNSPECIFIED, jdk.debug=release, sun.cpu.endian=little, user.home=C:\Users\Alex, user.language=ru, java.specification.vendor=Oracle Corporation, java.home=D:\Java, db.hibernate.dialect=org.hibernate.dialect.MySQLDialect, file.separator=\, java.vm.compressedOopsMode=32-bit, line.separator=
+, java.specification.name=Java Platform API Specification, java.vm.specification.vendor=Oracle Corporation, hibernate.transaction.coordinator_class=class org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorBuilderImpl, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, user.script=, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=9.0.1+11, user.name=Alex, path.separator=;, os.version=6.1, java.runtime.name=Java(TM) SE Runtime Environment, db.hibernate.hbm2ddl.auto=create, file.encoding=UTF-8, hibernate.ejb.persistenceUnitName=default, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, db.hibernate.show_sql=true, java.vendor.url.bug=http://bugreport.java.com/bugreport/, java.io.tmpdir=C:\Users\Alex\AppData\Local\Temp\, catalina.home=C:\Users\Alex\IdeaProjects\DeveloperCRUDREST\tomcat.8080, java.version=9.0.1, user.dir=C:\Users\Alex\IdeaProjects\DeveloperCRUDREST, os.arch=amd64, java.vm.specification.name=Java Virtual Machine Specification, java.awt.printerjob=sun.awt.windows.WPrinterJob, sun.os.patch.level=Service Pack 1, catalina.base=C:\Users\Alex\IdeaProjects\DeveloperCRUDREST\tomcat.8080, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.registry.StandardServiceRegistryBuilder$1@39484457, java.library.path=D:\Java\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;D:\Java\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Brackets\command;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\heroku\bin;C:\Program Files\nodejs\;C:\Users\Alex\AppData\Roaming\npm;., java.vendor=Oracle Corporation, java.vm.info=mixed mode, java.vm.version=9.0.1+11, hibernate.bytecode.use_reflection_optimizer=false, sun.io.unicode.encoding=UnicodeLittle, hibernate.connection.datasource=org.springframework.jdbc.datasource.DriverManagerDataSource@1c008df2, java.class.version=53.0}
+2020-02-27 18:33:01 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.engine.query.spi.NativeQueryInterpreter]
+2020-02-27 18:33:01 DEBUG JaccIntegrator:80 - Skipping JACC integration as it was not enabled
+2020-02-27 18:33:01 DEBUG SessionFactoryImpl:296 - Instantiated session factory
+2020-02-27 18:33:01 DEBUG TypeConfiguration$Scope:157 - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@4062a311] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@5d393621]
+2020-02-27 18:33:01 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.persister.spi.PersisterFactory]
+2020-02-27 18:33:01 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.persister.spi.PersisterClassResolver]
+2020-02-27 18:33:01 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.property.access.spi.PropertyAccessStrategyResolver]
+2020-02-27 18:33:01 DEBUG ClassLoaderAccessImpl:60 - Not known whether passed class name [ua.epam.model.Account] is safe
+2020-02-27 18:33:01 DEBUG ClassLoaderAccessImpl:62 - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : ua.epam.model.Account
+2020-02-27 18:33:01 DEBUG ClassLoaderAccessImpl:60 - Not known whether passed class name [ua.epam.model.Account] is safe
+2020-02-27 18:33:01 DEBUG ClassLoaderAccessImpl:62 - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : ua.epam.model.Account
+2020-02-27 18:33:01 INFO  PojoInstantiator:47 - HHH000182: No default (no-argument) constructor for class: ua.epam.model.Account (class must be instantiated by Interceptor)
+2020-02-27 18:33:01 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.bytecode.spi.ProxyFactoryFactory]
+2020-02-27 18:33:01 TRACE AbstractPropertyMapping:125 - Skipping duplicate registration of path [status.id], existing type = [org.hibernate.type.LongType@5cea3108], incoming type = [org.hibernate.type.LongType@5cea3108]
+2020-02-27 18:33:01 TRACE AbstractPropertyMapping:125 - Skipping duplicate registration of path [data], existing type = [org.hibernate.type.StringType@79a7cd56], incoming type = [org.hibernate.type.StringType@79a7cd56]
+2020-02-27 18:33:01 TRACE AbstractPropertyMapping:125 - Skipping duplicate registration of path [status], existing type = [org.hibernate.type.ManyToOneType(ua.epam.model.AccountStatus)], incoming type = [org.hibernate.type.ManyToOneType(ua.epam.model.AccountStatus)]
+2020-02-27 18:33:01 TRACE AbstractPropertyMapping:125 - Skipping duplicate registration of path [status.id], existing type = [org.hibernate.type.LongType@5cea3108], incoming type = [org.hibernate.type.LongType@5cea3108]
+2020-02-27 18:33:01 TRACE AbstractPropertyMapping:125 - Skipping duplicate registration of path [status.id], existing type = [org.hibernate.type.LongType@5cea3108], incoming type = [org.hibernate.type.LongType@5cea3108]
+2020-02-27 18:33:01 TRACE AbstractPropertyMapping:125 - Skipping duplicate registration of path [id], existing type = [org.hibernate.type.LongType@5cea3108], incoming type = [org.hibernate.type.LongType@5cea3108]
+2020-02-27 18:33:01 DEBUG ClassLoaderAccessImpl:60 - Not known whether passed class name [ua.epam.model.AccountStatus] is safe
+2020-02-27 18:33:01 DEBUG ClassLoaderAccessImpl:62 - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : ua.epam.model.AccountStatus
+2020-02-27 18:33:01 DEBUG ClassLoaderAccessImpl:60 - Not known whether passed class name [ua.epam.model.AccountStatus] is safe
+2020-02-27 18:33:01 DEBUG ClassLoaderAccessImpl:62 - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : ua.epam.model.AccountStatus
+2020-02-27 18:33:01 INFO  PojoInstantiator:47 - HHH000182: No default (no-argument) constructor for class: ua.epam.model.AccountStatus (class must be instantiated by Interceptor)
+2020-02-27 18:33:01 TRACE AbstractPropertyMapping:125 - Skipping duplicate registration of path [status], existing type = [org.hibernate.type.StringType@79a7cd56], incoming type = [org.hibernate.type.StringType@79a7cd56]
+2020-02-27 18:33:01 TRACE AbstractPropertyMapping:125 - Skipping duplicate registration of path [id], existing type = [org.hibernate.type.LongType@5cea3108], incoming type = [org.hibernate.type.LongType@5cea3108]
+2020-02-27 18:33:01 DEBUG ClassLoaderAccessImpl:60 - Not known whether passed class name [ua.epam.model.Skill] is safe
+2020-02-27 18:33:01 DEBUG ClassLoaderAccessImpl:62 - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : ua.epam.model.Skill
+2020-02-27 18:33:01 DEBUG ClassLoaderAccessImpl:60 - Not known whether passed class name [ua.epam.model.Skill] is safe
+2020-02-27 18:33:01 DEBUG ClassLoaderAccessImpl:62 - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : ua.epam.model.Skill
+2020-02-27 18:33:01 INFO  PojoInstantiator:47 - HHH000182: No default (no-argument) constructor for class: ua.epam.model.Skill (class must be instantiated by Interceptor)
+2020-02-27 18:33:01 TRACE AbstractPropertyMapping:125 - Skipping duplicate registration of path [name], existing type = [org.hibernate.type.StringType@79a7cd56], incoming type = [org.hibernate.type.StringType@79a7cd56]
+2020-02-27 18:33:01 TRACE AbstractPropertyMapping:125 - Skipping duplicate registration of path [id], existing type = [org.hibernate.type.LongType@5cea3108], incoming type = [org.hibernate.type.LongType@5cea3108]
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:3855 - Static SQL for entity: ua.epam.model.Account
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:3860 -  Version select: select id from accounts where id =?
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:3863 -  Snapshot select: select account_.id, account_.data as data2_1_, account_.status as status3_1_ from accounts account_ where account_.id=?
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:394 -  Insert 0: insert into accounts (data, status, id) values (?, ?, ?)
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:394 -  Update 0: update accounts set data=?, status=? where id=?
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:394 -  Delete 0: delete from accounts where id=?
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:3871 -  Identity insert: insert into accounts (data, status) values (?, ?)
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:172 -  Starting root entity : ua.epam.model.Account
+2020-02-27 18:33:01 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2bccff22]
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:113 - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@45c9d55d
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:648 - .. Registering AssociationKey : AssociationKey(table=accounts, columns={id}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@45c9d55d
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:239 - >> Starting entity identifier : ua.epam.model.Account
+2020-02-27 18:33:01 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : data
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:547 - >> Starting attribute Attribute(name=data, type=string [non-identifier])
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:628 - << Finishing up attribute : Attribute(name=data, type=string [non-identifier])
+2020-02-27 18:33:01 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : status
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:547 - >> Starting attribute Attribute(name=status, type=ua.epam.model.AccountStatus [non-identifier,association])
+2020-02-27 18:33:01 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4bc05d96]
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:113 - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@756364c5
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:648 - .... Registering AssociationKey : AssociationKey(table=accounts, columns={status}) -> org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@756364c5
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:239 - >>>> Starting entity identifier : ua.epam.model.AccountStatus
+2020-02-27 18:33:01 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : status.status
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:547 - >>>> Starting attribute Attribute(name=status, type=string [non-identifier])
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:628 - <<<< Finishing up attribute : Attribute(name=status, type=string [non-identifier])
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:120 - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@756364c5
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:628 - << Finishing up attribute : Attribute(name=status, type=ua.epam.model.AccountStatus [non-identifier,association])
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:120 - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@45c9d55d
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:208 -  Finished root entity : ua.epam.model.Account
+2020-02-27 18:33:01 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2020-02-27 18:33:01 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2020-02-27 18:33:01 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=ua.epam.model.Account)
+    - Returns
+       - EntityReturnImpl(entity=ua.epam.model.Account, querySpaceUid=<gen:0>, path=ua.epam.model.Account)
+          - EntityAttributeFetchImpl(entity=ua.epam.model.AccountStatus, querySpaceUid=<gen:1>, path=ua.epam.model.Account.status)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ua.epam.model.Account)
+          - SQL table alias mapping - account0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+          - JOIN (JoinDefinedByMetadata(status)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=ua.epam.model.AccountStatus)
+                - SQL table alias mapping - accountsta1_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_0_1_}
+
+2020-02-27 18:33:01 DEBUG EntityLoader:137 - Static select for entity ua.epam.model.Account [NONE]: select account0_.id as id1_1_0_, account0_.data as data2_1_0_, account0_.status as status3_1_0_, accountsta1_.id as id1_0_1_, accountsta1_.status as status2_0_1_ from accounts account0_ left outer join account_status accountsta1_ on account0_.status=accountsta1_.id where account0_.id=?
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:172 -  Starting root entity : ua.epam.model.Account
+2020-02-27 18:33:01 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@79ddd363]
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:113 - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@1e26ae35
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:648 - .. Registering AssociationKey : AssociationKey(table=accounts, columns={id}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@1e26ae35
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:239 - >> Starting entity identifier : ua.epam.model.Account
+2020-02-27 18:33:01 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : data
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:547 - >> Starting attribute Attribute(name=data, type=string [non-identifier])
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:628 - << Finishing up attribute : Attribute(name=data, type=string [non-identifier])
+2020-02-27 18:33:01 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : status
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:547 - >> Starting attribute Attribute(name=status, type=ua.epam.model.AccountStatus [non-identifier,association])
+2020-02-27 18:33:01 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6835bb57]
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:113 - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@477256c
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:648 - .... Registering AssociationKey : AssociationKey(table=accounts, columns={status}) -> org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@477256c
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:239 - >>>> Starting entity identifier : ua.epam.model.AccountStatus
+2020-02-27 18:33:01 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : status.status
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:547 - >>>> Starting attribute Attribute(name=status, type=string [non-identifier])
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:628 - <<<< Finishing up attribute : Attribute(name=status, type=string [non-identifier])
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:120 - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityAttributeFetchImpl@477256c
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:628 - << Finishing up attribute : Attribute(name=status, type=ua.epam.model.AccountStatus [non-identifier,association])
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:120 - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@1e26ae35
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:208 -  Finished root entity : ua.epam.model.Account
+2020-02-27 18:33:01 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2020-02-27 18:33:01 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2020-02-27 18:33:01 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=ua.epam.model.Account)
+    - Returns
+       - EntityReturnImpl(entity=ua.epam.model.Account, querySpaceUid=<gen:0>, path=ua.epam.model.Account)
+          - EntityAttributeFetchImpl(entity=ua.epam.model.AccountStatus, querySpaceUid=<gen:1>, path=ua.epam.model.Account.status)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ua.epam.model.Account)
+          - SQL table alias mapping - account0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+          - JOIN (JoinDefinedByMetadata(status)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=ua.epam.model.AccountStatus)
+                - SQL table alias mapping - accountsta1_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_0_1_}
+
+2020-02-27 18:33:01 DEBUG EntityLoader:137 - Static select for entity ua.epam.model.Account [READ]: select account0_.id as id1_1_0_, account0_.data as data2_1_0_, account0_.status as status3_1_0_, accountsta1_.id as id1_0_1_, accountsta1_.status as status2_0_1_ from accounts account0_ left outer join account_status accountsta1_ on account0_.status=accountsta1_.id where account0_.id=?
+2020-02-27 18:33:01 DEBUG Loader:38 - Static select for action ACTION_MERGE on entity ua.epam.model.Account: select account0_.id as id1_1_0_, account0_.data as data2_1_0_, account0_.status as status3_1_0_ from accounts account0_ where account0_.id=?
+2020-02-27 18:33:01 DEBUG Loader:38 - Static select for action ACTION_REFRESH on entity ua.epam.model.Account: select account0_.id as id1_1_0_, account0_.data as data2_1_0_, account0_.status as status3_1_0_ from accounts account0_ where account0_.id=?
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:3855 - Static SQL for entity: ua.epam.model.AccountStatus
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:3860 -  Version select: select id from account_status where id =?
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:3863 -  Snapshot select: select accountsta_.id, accountsta_.status as status2_0_ from account_status accountsta_ where accountsta_.id=?
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:394 -  Insert 0: insert into account_status (status, id) values (?, ?)
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:394 -  Update 0: update account_status set status=? where id=?
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:394 -  Delete 0: delete from account_status where id=?
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:3871 -  Identity insert: insert into account_status (status) values (?)
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:172 -  Starting root entity : ua.epam.model.AccountStatus
+2020-02-27 18:33:01 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6bc956cd]
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:113 - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@531aed2d
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:648 - .. Registering AssociationKey : AssociationKey(table=account_status, columns={id}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@531aed2d
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:239 - >> Starting entity identifier : ua.epam.model.AccountStatus
+2020-02-27 18:33:01 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : status
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:547 - >> Starting attribute Attribute(name=status, type=string [non-identifier])
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:628 - << Finishing up attribute : Attribute(name=status, type=string [non-identifier])
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:120 - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@531aed2d
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:208 -  Finished root entity : ua.epam.model.AccountStatus
+2020-02-27 18:33:01 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2020-02-27 18:33:01 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2020-02-27 18:33:01 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=ua.epam.model.AccountStatus)
+    - Returns
+       - EntityReturnImpl(entity=ua.epam.model.AccountStatus, querySpaceUid=<gen:0>, path=ua.epam.model.AccountStatus)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ua.epam.model.AccountStatus)
+          - SQL table alias mapping - accountsta0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+2020-02-27 18:33:01 DEBUG EntityLoader:137 - Static select for entity ua.epam.model.AccountStatus [NONE]: select accountsta0_.id as id1_0_0_, accountsta0_.status as status2_0_0_ from account_status accountsta0_ where accountsta0_.id=?
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:172 -  Starting root entity : ua.epam.model.AccountStatus
+2020-02-27 18:33:01 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3f156740]
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:113 - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@4d69685e
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:648 - .. Registering AssociationKey : AssociationKey(table=account_status, columns={id}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@4d69685e
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:239 - >> Starting entity identifier : ua.epam.model.AccountStatus
+2020-02-27 18:33:01 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : status
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:547 - >> Starting attribute Attribute(name=status, type=string [non-identifier])
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:628 - << Finishing up attribute : Attribute(name=status, type=string [non-identifier])
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:120 - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@4d69685e
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:208 -  Finished root entity : ua.epam.model.AccountStatus
+2020-02-27 18:33:01 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2020-02-27 18:33:01 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2020-02-27 18:33:01 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=ua.epam.model.AccountStatus)
+    - Returns
+       - EntityReturnImpl(entity=ua.epam.model.AccountStatus, querySpaceUid=<gen:0>, path=ua.epam.model.AccountStatus)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ua.epam.model.AccountStatus)
+          - SQL table alias mapping - accountsta0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+2020-02-27 18:33:01 DEBUG EntityLoader:137 - Static select for entity ua.epam.model.AccountStatus [READ]: select accountsta0_.id as id1_0_0_, accountsta0_.status as status2_0_0_ from account_status accountsta0_ where accountsta0_.id=?
+2020-02-27 18:33:01 DEBUG Loader:38 - Static select for action ACTION_MERGE on entity ua.epam.model.AccountStatus: select accountsta0_.id as id1_0_0_, accountsta0_.status as status2_0_0_ from account_status accountsta0_ where accountsta0_.id=?
+2020-02-27 18:33:01 DEBUG Loader:38 - Static select for action ACTION_REFRESH on entity ua.epam.model.AccountStatus: select accountsta0_.id as id1_0_0_, accountsta0_.status as status2_0_0_ from account_status accountsta0_ where accountsta0_.id=?
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:3855 - Static SQL for entity: ua.epam.model.Skill
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:3860 -  Version select: select id from skills where id =?
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:3863 -  Snapshot select: select skill_.id, skill_.name as name2_2_ from skills skill_ where skill_.id=?
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:394 -  Insert 0: insert into skills (name, id) values (?, ?)
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:394 -  Update 0: update skills set name=? where id=?
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:394 -  Delete 0: delete from skills where id=?
+2020-02-27 18:33:01 DEBUG AbstractEntityPersister:3871 -  Identity insert: insert into skills (name) values (?)
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:172 -  Starting root entity : ua.epam.model.Skill
+2020-02-27 18:33:01 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6c373000]
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:113 - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@6840db2e
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:648 - .. Registering AssociationKey : AssociationKey(table=skills, columns={id}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@6840db2e
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:239 - >> Starting entity identifier : ua.epam.model.Skill
+2020-02-27 18:33:01 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : name
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:547 - >> Starting attribute Attribute(name=name, type=string [non-identifier])
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:628 - << Finishing up attribute : Attribute(name=name, type=string [non-identifier])
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:120 - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@6840db2e
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:208 -  Finished root entity : ua.epam.model.Skill
+2020-02-27 18:33:01 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2020-02-27 18:33:01 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2020-02-27 18:33:01 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=ua.epam.model.Skill)
+    - Returns
+       - EntityReturnImpl(entity=ua.epam.model.Skill, querySpaceUid=<gen:0>, path=ua.epam.model.Skill)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ua.epam.model.Skill)
+          - SQL table alias mapping - skill0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_2_0_}
+
+2020-02-27 18:33:01 DEBUG EntityLoader:137 - Static select for entity ua.epam.model.Skill [NONE]: select skill0_.id as id1_2_0_, skill0_.name as name2_2_0_ from skills skill0_ where skill0_.id=?
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:172 -  Starting root entity : ua.epam.model.Skill
+2020-02-27 18:33:01 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7cfb8e01]
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:113 - Pushing fetch source to stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@7a563258
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:648 - .. Registering AssociationKey : AssociationKey(table=skills, columns={id}) -> org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@7a563258
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:239 - >> Starting entity identifier : ua.epam.model.Skill
+2020-02-27 18:33:01 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : name
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:547 - >> Starting attribute Attribute(name=name, type=string [non-identifier])
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:628 - << Finishing up attribute : Attribute(name=name, type=string [non-identifier])
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:120 - Popped fetch owner from stack : org.hibernate.loader.plan.build.internal.returns.EntityReturnImpl@7a563258
+2020-02-27 18:33:01 TRACE AbstractLoadPlanBuildingAssociationVisitationStrategy:208 -  Finished root entity : ua.epam.model.Skill
+2020-02-27 18:33:01 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:150 - Building LoadPlan...
+2020-02-27 18:33:01 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2020-02-27 18:33:01 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=ua.epam.model.Skill)
+    - Returns
+       - EntityReturnImpl(entity=ua.epam.model.Skill, querySpaceUid=<gen:0>, path=ua.epam.model.Skill)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=ua.epam.model.Skill)
+          - SQL table alias mapping - skill0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_2_0_}
+
+2020-02-27 18:33:01 DEBUG EntityLoader:137 - Static select for entity ua.epam.model.Skill [READ]: select skill0_.id as id1_2_0_, skill0_.name as name2_2_0_ from skills skill0_ where skill0_.id=?
+2020-02-27 18:33:01 DEBUG Loader:38 - Static select for action ACTION_MERGE on entity ua.epam.model.Skill: select skill0_.id as id1_2_0_, skill0_.name as name2_2_0_ from skills skill0_ where skill0_.id=?
+2020-02-27 18:33:01 DEBUG Loader:38 - Static select for action ACTION_REFRESH on entity ua.epam.model.Skill: select skill0_.id as id1_2_0_, skill0_.name as name2_2_0_ from skills skill0_ where skill0_.id=?
+2020-02-27 18:33:01 TRACE MetadataContext:204 - Wrapping up metadata context...
+2020-02-27 18:33:01 TRACE MetadataContext:259 - Starting mapped superclass [ua.epam.model.BasicEntity]
+2020-02-27 18:33:01 TRACE AttributeFactory:137 - Building identifier attribute [ua.epam.model.BasicEntity.id]
+2020-02-27 18:33:01 TRACE AttributeFactory:446 - Starting attribute metadata determination [id]
+2020-02-27 18:33:01 TRACE AttributeFactory:451 -     Determined member [private java.lang.Long ua.epam.model.BasicEntity.id]
+2020-02-27 18:33:01 TRACE AttributeFactory:455 -     Determined type [name=long, class=org.hibernate.type.LongType]
+2020-02-27 18:33:01 TRACE MetadataContext:287 - Completed mapped superclass [ua.epam.model.BasicEntity]
+2020-02-27 18:33:01 TRACE MetadataContext:216 - Starting entity [ua.epam.model.Account]
+2020-02-27 18:33:01 TRACE AttributeFactory:88 - Building attribute [Account.data]
+2020-02-27 18:33:01 TRACE AttributeFactory:446 - Starting attribute metadata determination [data]
+2020-02-27 18:33:01 TRACE AttributeFactory:451 -     Determined member [private java.lang.String ua.epam.model.Account.data]
+2020-02-27 18:33:01 TRACE AttributeFactory:455 -     Determined type [name=string, class=org.hibernate.type.StringType]
+2020-02-27 18:33:01 TRACE AttributeFactory:88 - Building attribute [Account.status]
+2020-02-27 18:33:01 TRACE AttributeFactory:446 - Starting attribute metadata determination [status]
+2020-02-27 18:33:01 TRACE AttributeFactory:451 -     Determined member [private ua.epam.model.AccountStatus ua.epam.model.Account.status]
+2020-02-27 18:33:01 TRACE AttributeFactory:455 -     Determined type [name=ua.epam.model.AccountStatus, class=org.hibernate.type.ManyToOneType]
+2020-02-27 18:33:01 TRACE MetadataContext:251 - Completed entity [ua.epam.model.Account]
+2020-02-27 18:33:01 TRACE MetadataContext:216 - Starting entity [ua.epam.model.AccountStatus]
+2020-02-27 18:33:01 TRACE AttributeFactory:88 - Building attribute [AccountStatus.status]
+2020-02-27 18:33:01 TRACE AttributeFactory:446 - Starting attribute metadata determination [status]
+2020-02-27 18:33:01 TRACE AttributeFactory:451 -     Determined member [private java.lang.String ua.epam.model.AccountStatus.status]
+2020-02-27 18:33:01 TRACE AttributeFactory:455 -     Determined type [name=string, class=org.hibernate.type.StringType]
+2020-02-27 18:33:01 TRACE MetadataContext:251 - Completed entity [ua.epam.model.AccountStatus]
+2020-02-27 18:33:01 TRACE MetadataContext:216 - Starting entity [ua.epam.model.Skill]
+2020-02-27 18:33:01 TRACE AttributeFactory:88 - Building attribute [Skill.name]
+2020-02-27 18:33:01 TRACE AttributeFactory:446 - Starting attribute metadata determination [name]
+2020-02-27 18:33:01 TRACE AttributeFactory:451 -     Determined member [private java.lang.String ua.epam.model.Skill.name]
+2020-02-27 18:33:01 TRACE AttributeFactory:455 -     Determined type [name=string, class=org.hibernate.type.StringType]
+2020-02-27 18:33:01 TRACE MetadataContext:251 - Completed entity [ua.epam.model.Skill]
+2020-02-27 18:33:01 DEBUG SchemaManagementToolCoordinator:57 - No actions specified; doing nothing
+2020-02-27 18:33:01 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform]
+2020-02-27 18:33:01 DEBUG JtaPlatformInitiator:43 - No JtaPlatform was specified, checking resolver
+2020-02-27 18:33:01 TRACE AbstractServiceRegistryImpl:233 - Initializing service [role=org.hibernate.engine.transaction.jta.platform.spi.JtaPlatformResolver]
+2020-02-27 18:33:01 DEBUG JtaPlatformResolverInitiator:33 - No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+2020-02-27 18:33:01 DEBUG StandardJtaPlatformResolver:137 - Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-27 18:33:01 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-27 18:33:01 DEBUG NamedQueryRepository:151 - Checking 0 named HQL queries
+2020-02-27 18:33:01 DEBUG NamedQueryRepository:167 - Checking 0 named SQL queries
+2020-02-27 18:33:01 TRACE TypeConfiguration$Scope:205 - Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@5d393621] for TypeConfiguration
+2020-02-27 18:33:01 DEBUG SessionFactoryRegistry:52 - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@5c6a4496
+2020-02-27 18:33:01 DEBUG SessionFactoryRegistry:74 - Registering SessionFactory: 68b15da3-3a45-492f-a558-58b369777689 (<unnamed>)
+2020-02-27 18:33:01 DEBUG SessionFactoryRegistry:81 - Not binding SessionFactory to JNDI, no JNDI name configured
+2020-02-27 18:33:33 ERROR ConnectionUtil:31 - 
+java.io.FileNotFoundException:  (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:196)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:94)
+	at java.base/java.io.FileReader.<init>(FileReader.java:58)
+	at ua.epam.util.ConnectionUtil.init(ConnectionUtil.java:29)
+	at ua.epam.util.ConnectionUtil.getConnection(ConnectionUtil.java:47)
+	at ua.epam.repository.jdbc.JdbcAbstractRepository.getAll(JdbcAbstractRepository.java:62)
+	at ua.epam.service.serviceImpl.SkillServiceImpl.getAll(SkillServiceImpl.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at ua.epam.AppConfig$1.lambda$postProcessAfterInitialization$0(AppConfig.java:92)
+	at com.sun.proxy.$Proxy62.getAll(Unknown Source)
+	at ua.epam.controller.SkillController.getSkills(SkillController.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:810)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+2020-02-27 18:33:34 DEBUG AppConfig:95 - Profiling skillServiceImpl.getAll: 1953144264 ns
