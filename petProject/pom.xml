@@ -197,12 +197,12 @@
     <build>
         <resources>
             <resource>
-                <directory>${project.basedir}/src/main/resources</directory>
+                <directory>src/main/resources</directory>
             </resource>
         </resources>
         <testResources>
             <testResource>
-                <directory>${project.basedir}/src/test/resources</directory>
+                <directory>src/test/resources</directory>
             </testResource>
         </testResources>
         <pluginManagement>
@@ -309,7 +309,7 @@
                 <artifactId>appassembler-maven-plugin</artifactId>
                 <version>2.0.0</version>
                 <configuration>
-                    <assembleDirectory>target</assembleDirectory>
+                    <assembleDirectory>../target</assembleDirectory>
                     <programs>
                         <program>
                             <mainClass>ua.epam.WebApp</mainClass>
