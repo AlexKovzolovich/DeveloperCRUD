@@ -2,12 +2,10 @@ package ua.epam.service.serviceImpl;
 
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import ua.epam.annotation.Timed;
-import ua.epam.exceptions.PersistException;
 import ua.epam.model.Account;
-import ua.epam.repository.AccountRepository;
+import ua.epam.repository.spring.AccountRepositoryJpa;
 import ua.epam.service.AccountService;
 
 import java.util.List;
@@ -16,19 +14,19 @@ import java.util.List;
 @Service
 @Timed
 public class AccountServiceImpl implements AccountService {
-    private AccountRepository accountRepository;
+    private AccountRepositoryJpa accountRepository;
 
     @Autowired
-    public AccountServiceImpl(@Qualifier("accountRepositoryJdbc") AccountRepository accountRepository) {
+    public AccountServiceImpl(AccountRepositoryJpa accountRepository) {
         this.accountRepository = accountRepository;
     }
 
     public Account getById(Long id) {
-        return accountRepository.getById(id);
+        return accountRepository.getOne(id);
     }
 
     public List<Account> getAll() {
-        return accountRepository.getAll();
+        return accountRepository.findAll();
     }
 
     public void save(Account account) {
@@ -40,6 +38,6 @@ public class AccountServiceImpl implements AccountService {
     }
 
     public void update(Account account) {
-        accountRepository.update(account);
+        accountRepository.save(account);
     }
 }

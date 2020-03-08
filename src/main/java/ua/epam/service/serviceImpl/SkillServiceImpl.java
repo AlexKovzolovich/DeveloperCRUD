@@ -2,12 +2,10 @@ package ua.epam.service.serviceImpl;
 
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import ua.epam.annotation.Timed;
-import ua.epam.exceptions.PersistException;
 import ua.epam.model.Skill;
-import ua.epam.repository.SkillRepository;
+import ua.epam.repository.spring.SkillRepositoryJpa;
 import ua.epam.service.SkillService;
 
 import java.util.List;
@@ -16,19 +14,19 @@ import java.util.List;
 @Service
 @Timed
 public class SkillServiceImpl implements SkillService {
-    private SkillRepository skillRepository;
+    private SkillRepositoryJpa skillRepository;
 
     @Autowired
-    public SkillServiceImpl(@Qualifier("skillRepositoryJdbc") SkillRepository skillRepository) {
+    public SkillServiceImpl(SkillRepositoryJpa skillRepository) {
         this.skillRepository = skillRepository;
     }
 
     public Skill getById(Long id) {
-        return skillRepository.getById(id);
+        return skillRepository.getOne(id);
     }
 
     public List<Skill> getAll() {
-        return skillRepository.getAll();
+        return skillRepository.findAll();
     }
 
     public void save(Skill skill) {
@@ -40,6 +38,6 @@ public class SkillServiceImpl implements SkillService {
     }
 
     public void update(Skill skill) {
-        skillRepository.update(skill);
+        skillRepository.save(skill);
     }
 }

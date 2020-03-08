@@ -1,11 +1,24 @@
 package ua.epam.model;
 
+import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;
 
-public class Developer extends BasicEntity{
+@Entity
+@Table(name = "developers")
+public class Developer extends BasicEntity {
+
+    @Column(name = "name")
     private String name;
+
+    @OneToOne
+    @JoinColumn(name = "account")
     private Account account;
+
+    @ManyToMany
+    @JoinTable(name = "developer_skills",
+            joinColumns = {@JoinColumn(name = "developer_id")},
+            inverseJoinColumns = {@JoinColumn(name = "skill)id")})
     private Set<Skill> skills;
 
     public Developer(Long id, String name, Account account, Set<Skill> skills) {

@@ -2,8 +2,10 @@ package ua.epam.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "skills")
@@ -11,6 +13,9 @@ public class Skill extends BasicEntity{
 
     @Column(name = "name")
     private String name;
+
+    @ManyToMany(mappedBy = "skills")
+    private Set<Developer> developers;
 
     public Long getId() {
         return super.getId();

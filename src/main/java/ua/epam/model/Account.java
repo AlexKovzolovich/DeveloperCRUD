@@ -13,6 +13,9 @@ public class Account extends BasicEntity{
     @JoinColumn(name = "status")
     private AccountStatus status;
 
+    @OneToOne(mappedBy = "account")
+    private Developer developer;
+
     public Account(Long id, String data, AccountStatus status) {
         super(id);
         this.data = data;

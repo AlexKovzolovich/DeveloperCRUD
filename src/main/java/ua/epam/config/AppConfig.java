@@ -1,16 +1,14 @@
-package ua.epam;
+package ua.epam.config;
 
 import org.apache.log4j.Logger;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.*;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import ua.epam.annotation.Timed;
 
 import javax.sql.DataSource;
@@ -20,20 +18,33 @@ import java.util.Map;
 import java.util.Properties;
 
 @Configuration
-@EnableWebMvc
 @ComponentScan("ua.epam")
+@Import({WebConfig.class})
+@PropertySource("classpath:db/dataSource.properties")
 public class AppConfig {
 
     private static final Logger log = Logger.getLogger(AppConfig.class);
+
+    @Value("com.mysql.cj.jdbc.Driver")
+    private String jdbcDriverClass;
+
+    @Value("jdbc:mysql://fojvtycq53b2f2kx.chr7pe7iynqr.eu-west-1.rds.amazonaws.com/owapv3xvgqrjk3py")
+    private String databaseUrl;
+
+    @Value("ra2qoz0yg0c3b41w")
+    private String databaseUser;
+
+    @Value("blap8bjsz5kvg4pp")
+    private String databasePassword;
 
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://fojvtycq53b2f2kx.chr7pe7iynqr.eu-west-1.rds.amazonaws.com/owapv3xvgqrjk3py");
-        dataSource.setUsername("ra2qoz0yg0c3b41w");
-        dataSource.setPassword("blap8bjsz5kvg4pp");
+        dataSource.setDriverClassName(jdbcDriverClass);
+        dataSource.setUrl(databaseUrl);
+        dataSource.setUsername(databaseUser);
+        dataSource.setPassword(databasePassword);
 
         return dataSource;
     }
@@ -61,9 +72,9 @@ public class AppConfig {
     private Properties getHibernateProperties() {
         Properties properties = new Properties();
 
-        properties.put("db.hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
-        properties.put("db.hibernate.show_sql", true);
-        properties.put("db.hibernate.hbm2ddl.auto", "create");
+        properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+        properties.put("hibernate.show_sql", true);
+        properties.put("hibernate.hbm2ddl.auto", "create");
 
         return properties;
     }
@@ -84,7 +95,7 @@ public class AppConfig {
             }
 
             @Override
-            public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+            public Object postProcessAfterInitialization(Object bean, String beanName) {
                 Class beanClass = map.get(beanName);
                 if (beanClass != null) {
                     return Proxy.newProxyInstance(beanClass.getClassLoader(), beanClass.getInterfaces(), (proxy, method, args) -> {
@@ -100,4 +111,6 @@ public class AppConfig {
             }
         };
     }
+
+
 }
