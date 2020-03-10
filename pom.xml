@@ -7,7 +7,7 @@
     <groupId>ua.epam</groupId>
     <artifactId>Developer-CRUD-REST</artifactId>
     <version>1.0-RELEASE</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <name>Developer-CRUD-REST Maven Webapp</name>
 
