@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class ControllerAdvisor {
 
-    private static boolean isAppTerminated = false;
+  private static boolean isAppTerminated = false;
 
-    @ExceptionHandler
-    public ResponseEntity handleException(Exception exception) {
-        if (exception instanceof DataAccessException) {
-            isAppTerminated = true;
-        }
-        return new ResponseEntity(HttpStatus.BAD_REQUEST);
-    }
+  public static boolean isIsAppTerminated() {
+    return isAppTerminated;
+  }
 
-    public static boolean isIsAppTerminated() {
-        return isAppTerminated;
+  @ExceptionHandler
+  public ResponseEntity handleException(Exception exception) {
+    if (exception instanceof DataAccessException) {
+      isAppTerminated = true;
     }
+    return new ResponseEntity(HttpStatus.BAD_REQUEST);
+  }
 }

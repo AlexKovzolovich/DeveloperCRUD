@@ -1,7 +1,8 @@
 try {
   module.exports.SwaggerUIBundle = require("./swagger-ui-bundle.js")
-  module.exports.SwaggerUIStandalonePreset = require("./swagger-ui-standalone-preset.js")
-} catch(e) {
+  module.exports.SwaggerUIStandalonePreset = require(
+      "./swagger-ui-standalone-preset.js")
+} catch (e) {
   // swallow the error if there's a problem loading the assets.
   // allows this module to support providing the assets for browserish contexts,
   // without exploding in a Node context.

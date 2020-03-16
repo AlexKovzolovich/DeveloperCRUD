@@ -109,7 +109,7 @@
   font-weight: bold;
   font-size: 15px;
   padding: 6px 0;
-  color: rgb(57,57,57);
+  color: rgb(57, 57, 57);
 }
 
 .content {
@@ -161,7 +161,7 @@ li.parameter {
   padding-left: 1em;
 }
 
-.param{
+.param {
   display: block;
 }
 
@@ -173,6 +173,7 @@ li.parameter {
   font-weight: bold;
   font-size: 1.1em;
 }
+
 .param-type {
   margin-left: 1em;
   font-style: italic;

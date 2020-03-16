@@ -6,5 +6,6 @@ import ua.epam.resthomework.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    User findUserByFirstNameAndLastName(String firstName, String lastName);
+
+  User findUserByFirstNameAndLastName(String firstName, String lastName);
 }

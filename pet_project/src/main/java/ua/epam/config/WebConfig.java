@@ -14,11 +14,11 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableJpaRepositories("ua.epam.repository.spring")
 public class WebConfig {
 
-    @Bean
-    public ViewResolver viewResolver() {
-        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/WEB-INF/");
-        resolver.setSuffix(".jsp");
-        return resolver;
-    }
+  @Bean
+  public ViewResolver viewResolver() {
+    InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+    resolver.setPrefix("/WEB-INF/");
+    resolver.setSuffix(".jsp");
+    return resolver;
+  }
 }

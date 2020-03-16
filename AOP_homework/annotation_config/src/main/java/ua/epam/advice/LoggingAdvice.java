@@ -7,23 +7,26 @@ import org.slf4j.LoggerFactory;
 
 @Aspect
 public class LoggingAdvice {
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Pointcut("@annotation(ua.epam.annotation.Logging)")
-    public void pointcut() {}
+  private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Before("pointcut()")
-    public void beforeCall(JoinPoint joinPoint) {
-        logger.info("Entering " + joinPoint.getSignature().getName());
-    }
+  @Pointcut("@annotation(ua.epam.annotation.Logging)")
+  public void pointcut() {
+  }
 
-    @After("pointcut()")
-    public void afterCall(JoinPoint joinPoint) {
-        logger.info("Exiting " + joinPoint.getSignature().getName());
-    }
+  @Before("pointcut()")
+  public void beforeCall(JoinPoint joinPoint) {
+    logger.info("Entering " + joinPoint.getSignature().getName());
+  }
 
-    @AfterThrowing(value = "pointcut()", throwing = "exception")
-    public void afterCallThrowing(JoinPoint joinPoint, Exception exception) {
-        logger.info("Exiting " + joinPoint.getSignature().getName() + " with exception " + exception.toString());
-    }
+  @After("pointcut()")
+  public void afterCall(JoinPoint joinPoint) {
+    logger.info("Exiting " + joinPoint.getSignature().getName());
+  }
+
+  @AfterThrowing(value = "pointcut()", throwing = "exception")
+  public void afterCallThrowing(JoinPoint joinPoint, Exception exception) {
+    logger.info("Exiting " + joinPoint.getSignature().getName() + " with exception " + exception
+        .toString());
+  }
 }

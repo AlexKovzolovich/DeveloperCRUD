@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xsi:schemaLocation="
+<beans xmlns:aop="http://www.springframework.org/schema/aop"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-    <bean id="loggingAdvice" class="ua.epam.advice.LoggingAdvice"/>
+  <aop:config>
+    <aop:aspect ref="loggingAdvice">
+      <aop:after method="afterCall" pointcut-ref="loggingPointcut"/>
+      <aop:after-throwing method="afterCallThrowing" pointcut-ref="loggingPointcut"
+        throwing="exception"/>
+      <aop:before method="beforeCall" pointcut-ref="loggingPointcut"/>
+      <aop:pointcut expression="@annotation(ua.epam.annotation.Logging)" id="loggingPointcut"/>
+    </aop:aspect>
+  </aop:config>
 
-    <aop:config>
-        <aop:aspect ref="loggingAdvice">
-            <aop:pointcut id="loggingPointcut" expression="@annotation(ua.epam.annotation.Logging)"/>
-            <aop:before pointcut-ref="loggingPointcut" method="beforeCall"/>
-            <aop:after pointcut-ref="loggingPointcut" method="afterCall"/>
-            <aop:after-throwing pointcut-ref="loggingPointcut" throwing="exception" method="afterCallThrowing"/>
-        </aop:aspect>
-    </aop:config>
+  <bean class="ua.epam.advice.LoggingAdvice" id="loggingAdvice"/>
 
 
 </beans>
