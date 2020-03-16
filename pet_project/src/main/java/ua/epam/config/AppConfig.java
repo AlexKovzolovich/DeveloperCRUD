@@ -24,16 +24,16 @@ public class AppConfig {
 
   private static final Logger log = Logger.getLogger(AppConfig.class);
 
-  @Value("com.mysql.cj.jdbc.Driver")
+  @Value("${database.driver}")
   private String jdbcDriverClass;
 
-  @Value("jdbc:mysql://fojvtycq53b2f2kx.chr7pe7iynqr.eu-west-1.rds.amazonaws.com/owapv3xvgqrjk3py")
+  @Value("${database.url}")
   private String databaseUrl;
 
-  @Value("ra2qoz0yg0c3b41w")
+  @Value("${database.user}")
   private String databaseUser;
 
-  @Value("blap8bjsz5kvg4pp")
+  @Value("${database.password}")
   private String databasePassword;
 
   @Bean
