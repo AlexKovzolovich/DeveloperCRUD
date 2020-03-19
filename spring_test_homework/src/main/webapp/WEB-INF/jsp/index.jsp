@@ -46,6 +46,5 @@
     <li><fmt:message key="developerEndPoint.message"/></li>
 </ul>
 <br>
-<a href="secret.jsp">Secret</a>
 </body>
 </html>
