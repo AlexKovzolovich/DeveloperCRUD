@@ -15,11 +15,14 @@ public class Developer extends BasicEntity {
   @JoinColumn(name = "account")
   private Account account;
 
-  @ManyToMany
+  @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(name = "developer_skills",
       joinColumns = {@JoinColumn(name = "developer_id")},
-      inverseJoinColumns = {@JoinColumn(name = "skill)id")})
+      inverseJoinColumns = {@JoinColumn(name = "skill_id")})
   private Set<Skill> skills;
+
+  public Developer() {
+  }
 
   public Developer(Long id, String name, Account account, Set<Skill> skills) {
     super(id);

@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -14,8 +15,11 @@ public class Skill extends BasicEntity {
   @Column(name = "name")
   private String name;
 
-  @ManyToMany(mappedBy = "skills")
+  @ManyToMany(mappedBy = "skills", fetch = FetchType.EAGER)
   private Set<Developer> developers;
+
+  public Skill() {
+  }
 
   public Skill(Long id, String name) {
     super(id);

@@ -1,7 +1,7 @@
 package ua.epam.service;
 
-import ua.epam.model.Account;
+import ua.epam.dto.AccountDto;
 
-public interface AccountService extends Service<Account, Long> {
+public interface AccountService extends Service<AccountDto, Long> {
 
 }

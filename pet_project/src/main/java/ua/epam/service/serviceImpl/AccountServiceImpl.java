@@ -3,9 +3,13 @@ package ua.epam.service.serviceImpl;
 import java.util.List;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import ua.epam.annotation.Timed;
-import ua.epam.model.Account;
+import ua.epam.converter.AccountConverter;
+import ua.epam.dto.AccountDto;
+import ua.epam.exceptions.AlreadyExistsException;
+import ua.epam.exceptions.NotExistException;
 import ua.epam.repository.spring.AccountRepositoryJpa;
 import ua.epam.service.AccountService;
 
@@ -15,29 +19,45 @@ import ua.epam.service.AccountService;
 public class AccountServiceImpl implements AccountService {
 
   private AccountRepositoryJpa accountRepository;
+  private AccountConverter accountConverter;
 
   @Autowired
-  public AccountServiceImpl(AccountRepositoryJpa accountRepository) {
+  public AccountServiceImpl(AccountRepositoryJpa accountRepository,
+      AccountConverter accountConverter) {
     this.accountRepository = accountRepository;
+    this.accountConverter = accountConverter;
   }
 
-  public Account getById(Long id) {
-    return accountRepository.getOne(id);
+  @Override
+  public AccountDto getById(Long id) {
+    return accountConverter.convert(accountRepository.findById(id).orElseThrow(
+        NotExistException::new));
   }
 
-  public List<Account> getAll() {
-    return accountRepository.findAll();
+  @Override
+  public List<AccountDto> getAll() {
+    return accountConverter.convertAll(accountRepository.findAll());
   }
 
-  public void save(Account account) {
-    accountRepository.save(account);
+  @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+  @Override
+  public void save(AccountDto accountDto) {
+    if (accountRepository.findById(accountDto.getId()).isPresent()) {
+      throw new AlreadyExistsException();
+    }
+    accountRepository.save(accountConverter.unConvert(accountDto));
   }
 
-  public void delete(Account account) {
-    accountRepository.delete(account);
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
+  @Override
+  public void delete(AccountDto accountDto) {
+    accountRepository.findById(accountDto.getId()).orElseThrow(NotExistException::new);
+    accountRepository.delete(accountConverter.unConvert(accountDto));
   }
 
-  public void update(Account account) {
-    accountRepository.save(account);
+  @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+  @Override
+  public void update(AccountDto accountDto) {
+    save(accountDto);
   }
 }

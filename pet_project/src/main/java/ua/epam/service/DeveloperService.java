@@ -1,7 +1,7 @@
 package ua.epam.service;
 
-import ua.epam.model.Developer;
+import ua.epam.dto.DeveloperDto;
 
-public interface DeveloperService extends Service<Developer, Long> {
+public interface DeveloperService extends Service<DeveloperDto, Long> {
 
 }

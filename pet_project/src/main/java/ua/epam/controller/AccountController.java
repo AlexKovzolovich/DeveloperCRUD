@@ -5,12 +5,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import ua.epam.model.Account;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import ua.epam.dto.AccountDto;
 import ua.epam.service.AccountService;
 
 @Controller
-@RequestMapping("/account")
+@RequestMapping("/api/v1/account")
 public class AccountController {
 
   private AccountService accountService;
@@ -22,31 +28,31 @@ public class AccountController {
 
   @GetMapping(params = "id")
   public @ResponseBody
-  Account getAccount(Long id) {
+  AccountDto getAccount(Long id) {
     return accountService.getById(id);
   }
 
   @GetMapping
   public @ResponseBody
-  List<Account> getAccounts() {
+  List<AccountDto> getAccounts() {
     return accountService.getAll();
   }
 
   @PostMapping
-  public ResponseEntity postAccount(@RequestBody Account account) {
-    accountService.save(account);
+  public ResponseEntity postAccount(@RequestBody AccountDto accountDto) {
+    accountService.save(accountDto);
     return new ResponseEntity(HttpStatus.CREATED);
   }
 
   @PutMapping
-  public ResponseEntity putAccount(@RequestBody Account account) {
-    accountService.update(account);
+  public ResponseEntity putAccount(@RequestBody AccountDto accountDto) {
+    accountService.update(accountDto);
     return new ResponseEntity(HttpStatus.OK);
   }
 
   @DeleteMapping
-  public ResponseEntity deleteAccount(@RequestBody Account account) {
-    accountService.delete(account);
+  public ResponseEntity deleteAccount(@RequestBody AccountDto accountDto) {
+    accountService.delete(accountDto);
     return new ResponseEntity(HttpStatus.OK);
   }
 }

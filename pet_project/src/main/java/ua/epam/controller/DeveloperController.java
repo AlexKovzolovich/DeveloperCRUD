@@ -7,12 +7,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import ua.epam.model.Developer;
+import ua.epam.dto.DeveloperDto;
 import ua.epam.service.DeveloperService;
 
 @Log4j
 @Controller
-@RequestMapping("/developer")
+@RequestMapping("/api/v1/developer")
 public class DeveloperController {
 
   private DeveloperService developerService;
@@ -24,31 +24,31 @@ public class DeveloperController {
 
   @GetMapping(params = "id")
   public @ResponseBody
-  Developer getDeveloper(Long id) {
+  DeveloperDto getDeveloper(Long id) {
     return developerService.getById(id);
   }
 
   @GetMapping
   public @ResponseBody
-  List<Developer> getDevelopers() {
+  List<DeveloperDto> getDevelopers() {
     return developerService.getAll();
   }
 
   @PostMapping
-  public ResponseEntity postDeveloper(@RequestBody Developer developer) {
-    developerService.save(developer);
-    return new ResponseEntity(HttpStatus.OK);
+  public ResponseEntity postDeveloper(@RequestBody DeveloperDto developerDto) {
+    developerService.save(developerDto);
+    return new ResponseEntity(HttpStatus.CREATED);
   }
 
   @PutMapping
-  public ResponseEntity putMapping(@RequestBody Developer developer) {
-    developerService.update(developer);
+  public ResponseEntity putDeveloper(@RequestBody DeveloperDto developerDto) {
+    developerService.update(developerDto);
     return new ResponseEntity(HttpStatus.OK);
   }
 
   @DeleteMapping
-  public ResponseEntity deleteDeveloper(@RequestBody Developer developer) {
-    developerService.delete(developer);
+  public ResponseEntity deleteDeveloper(@RequestBody DeveloperDto developerDto) {
+    developerService.delete(developerDto);
     return new ResponseEntity(HttpStatus.OK);
   }
 }

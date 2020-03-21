@@ -10,6 +10,9 @@ public class BasicEntity {
   @Column(name = "id")
   private Long id;
 
+  public BasicEntity() {
+  }
+
   public BasicEntity(Long id) {
     this.id = id;
   }

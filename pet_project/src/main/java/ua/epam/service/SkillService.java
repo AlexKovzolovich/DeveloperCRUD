@@ -1,7 +1,7 @@
 package ua.epam.service;
 
-import ua.epam.model.Skill;
+import ua.epam.dto.SkillDto;
 
-public interface SkillService extends Service<Skill, Long> {
+public interface SkillService extends Service<SkillDto, Long> {
 
 }

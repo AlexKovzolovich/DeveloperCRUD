@@ -3,81 +3,30 @@ package ua.epam.config;
 import java.lang.reflect.Proxy;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
-import javax.sql.DataSource;
 import org.apache.log4j.Logger;
-import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-import org.springframework.context.annotation.*;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import ua.epam.annotation.Timed;
 
 @Configuration
+@Import({WebSecurityConfig.class})
 @ComponentScan("ua.epam")
-@Import({WebConfig.class})
-@PropertySource("classpath:db/dataSource.properties")
-public class AppConfig {
+@EnableJpaRepositories("ua.epam.repository.spring")
+@EnableWebMvc
+public class AppConfig implements WebMvcConfigurer {
 
   private static final Logger log = Logger.getLogger(AppConfig.class);
-
-  @Value("${database.driver}")
-  private String jdbcDriverClass;
-
-  @Value("${database.url}")
-  private String databaseUrl;
-
-  @Value("${database.user}")
-  private String databaseUser;
-
-  @Value("${database.password}")
-  private String databasePassword;
-
-  @Bean
-  public DataSource dataSource() {
-    DriverManagerDataSource dataSource = new DriverManagerDataSource();
-
-    dataSource.setDriverClassName(jdbcDriverClass);
-    dataSource.setUrl(databaseUrl);
-    dataSource.setUsername(databaseUser);
-    dataSource.setPassword(databasePassword);
-
-    return dataSource;
-  }
-
-  @Bean
-  public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-    LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-
-    localContainerEntityManagerFactoryBean.setDataSource(dataSource());
-    localContainerEntityManagerFactoryBean
-        .setPersistenceProviderClass(HibernatePersistenceProvider.class);
-    localContainerEntityManagerFactoryBean.setPackagesToScan("ua.epam.model");
-    localContainerEntityManagerFactoryBean.setJpaProperties(getHibernateProperties());
-
-    return localContainerEntityManagerFactoryBean;
-  }
-
-  @Bean
-  public JpaTransactionManager transactionManager() {
-    JpaTransactionManager transactionManager = new JpaTransactionManager();
-    transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
-
-    return transactionManager;
-  }
-
-  private Properties getHibernateProperties() {
-    Properties properties = new Properties();
-
-    properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
-    properties.put("hibernate.show_sql", true);
-    properties.put("hibernate.hbm2ddl.auto", "create");
-
-    return properties;
-  }
 
   @Bean
   public BeanPostProcessor TimedAnnotationBeanPostProcessor() {
@@ -117,5 +66,24 @@ public class AppConfig {
     };
   }
 
+  @Override
+  public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    registry.addResourceHandler("/WEB-INF/jsp/**").addResourceLocations("/jsp/");
+    registry.addResourceHandler("/WEB-INF/img/**").addResourceLocations("/img/");
+  }
+
+  @Override
+  public void addViewControllers(ViewControllerRegistry registry) {
+    registry.addViewController("/").setViewName("index");
+    registry.addViewController("/login").setViewName("login");
+  }
+
+  @Bean
+  public ViewResolver viewResolver() {
+    InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+    resolver.setPrefix("/WEB-INF/jsp/");
+    resolver.setSuffix(".jsp");
+    return resolver;
+  }
 
 }

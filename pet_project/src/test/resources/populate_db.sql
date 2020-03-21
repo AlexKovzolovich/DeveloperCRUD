@@ -1,5 +1,3 @@
-USE crud_app;
-
 INSERT INTO skills (name)
 VALUES ('java'),
        ('cpp'),

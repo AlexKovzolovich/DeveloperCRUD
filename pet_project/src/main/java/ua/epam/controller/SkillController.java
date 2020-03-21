@@ -6,12 +6,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import ua.epam.model.Skill;
+import ua.epam.dto.SkillDto;
 import ua.epam.service.SkillService;
 
 
 @Controller
-@RequestMapping("/skill")
+@RequestMapping("/api/v1/skill")
 public class SkillController {
 
   private SkillService skillService;
@@ -23,31 +23,31 @@ public class SkillController {
 
   @GetMapping(params = "id")
   public @ResponseBody
-  Skill getSkill(Long id) {
+  SkillDto getSkill(Long id) {
     return skillService.getById(id);
   }
 
   @GetMapping
   public @ResponseBody
-  List<Skill> getSkills() {
+  List<SkillDto> getSkills() {
     return skillService.getAll();
   }
 
-  @PostMapping
-  public ResponseEntity postSkill(@RequestBody Skill skill) {
-    skillService.save(skill);
+  @PostMapping()
+  public ResponseEntity postSkill(@RequestBody SkillDto skillDto) {
+    skillService.save(skillDto);
     return new ResponseEntity(HttpStatus.CREATED);
   }
 
   @PutMapping
-  public ResponseEntity putSkill(@RequestBody Skill skill) {
-    skillService.update(skill);
+  public ResponseEntity putSkill(@RequestBody SkillDto skillDto) {
+    skillService.update(skillDto);
     return new ResponseEntity(HttpStatus.OK);
   }
 
   @DeleteMapping
-  public ResponseEntity deleteSkill(@RequestBody Skill skill) {
-    skillService.delete(skill);
+  public ResponseEntity deleteSkill(@RequestBody SkillDto skillDto) {
+    skillService.delete(skillDto);
     return new ResponseEntity(HttpStatus.OK);
   }
 }

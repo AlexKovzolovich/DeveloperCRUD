@@ -1,5 +1,3 @@
-USE crud_app;
-
 CREATE TABLE IF NOT EXISTS skills
 (
     id   INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,

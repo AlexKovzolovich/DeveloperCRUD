@@ -1,11 +1,16 @@
 package ua.epam.service.serviceImpl;
 
 import java.util.List;
+import javax.ws.rs.NotFoundException;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import ua.epam.annotation.Timed;
-import ua.epam.model.Skill;
+import ua.epam.converter.SkillConverter;
+import ua.epam.dto.SkillDto;
+import ua.epam.exceptions.AlreadyExistsException;
+import ua.epam.exceptions.NotExistException;
 import ua.epam.repository.spring.SkillRepositoryJpa;
 import ua.epam.service.SkillService;
 
@@ -15,29 +20,44 @@ import ua.epam.service.SkillService;
 public class SkillServiceImpl implements SkillService {
 
   private SkillRepositoryJpa skillRepository;
+  private SkillConverter skillConverter;
 
   @Autowired
-  public SkillServiceImpl(SkillRepositoryJpa skillRepository) {
+  public SkillServiceImpl(SkillRepositoryJpa skillRepository,
+      SkillConverter skillConverter) {
     this.skillRepository = skillRepository;
+    this.skillConverter = skillConverter;
   }
 
-  public Skill getById(Long id) {
-    return skillRepository.getOne(id);
+  @Override
+  public SkillDto getById(Long id) {
+    return skillConverter.convert(skillRepository.findById(id).orElseThrow(NotExistException::new));
   }
 
-  public List<Skill> getAll() {
-    return skillRepository.findAll();
+  @Override
+  public List<SkillDto> getAll() {
+    return skillConverter.convertAll(skillRepository.findAll());
   }
 
-  public void save(Skill skill) {
-    skillRepository.save(skill);
+  @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+  @Override
+  public void save(SkillDto skillDto) {
+    if (skillRepository.findById(skillDto.getId()).isPresent()) {
+      throw new AlreadyExistsException();
+    }
+    skillRepository.save(skillConverter.unConvert(skillDto));
   }
 
-  public void delete(Skill skill) {
-    skillRepository.delete(skill);
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
+  @Override
+  public void delete(SkillDto skillDto) {
+    skillRepository.findById(skillDto.getId()).orElseThrow(NotExistException::new);
+    skillRepository.delete(skillConverter.unConvert(skillDto));
   }
 
-  public void update(Skill skill) {
-    skillRepository.save(skill);
+  @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_ADMIN')")
+  @Override
+  public void update(SkillDto skillDto) {
+    save(skillDto);
   }
 }

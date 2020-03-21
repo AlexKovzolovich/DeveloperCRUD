@@ -11,6 +11,9 @@ public class AccountStatus extends BasicEntity {
   @Column(name = "status")
   private String status;
 
+  public AccountStatus() {
+  }
+
   public AccountStatus(Long id, String status) {
     super(id);
     this.status = status;
