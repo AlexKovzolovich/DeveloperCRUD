@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import ua.epam.annotation.Timed;
 import ua.epam.converter.DeveloperConverter;
 import ua.epam.dto.DeveloperDto;
-import ua.epam.model.Developer;
 import ua.epam.repository.spring.DeveloperRepositoryJpa;
 import ua.epam.service.DeveloperService;
 

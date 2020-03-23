@@ -20,21 +20,17 @@ import org.mockito.Mockito;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import ua.epam.util.SkillDtoGenerator;
 import ua.epam.dto.SkillDto;
 import ua.epam.service.SkillService;
+import ua.epam.util.SkillDtoGenerator;
 
 public class SkillControllerTest {
 
-  private final SkillService skillService = Mockito.mock(SkillService.class);
-
-  private final SkillController sut = new SkillController(skillService);
-
-  private final MockMvc mockMvc = MockMvcBuilders.standaloneSetup(sut).build();
-
-  private final Gson gson = new Gson();
-
   private final static String URL = "/api/v1/skill";
+  private final SkillService skillService = Mockito.mock(SkillService.class);
+  private final SkillController sut = new SkillController(skillService);
+  private final MockMvc mockMvc = MockMvcBuilders.standaloneSetup(sut).build();
+  private final Gson gson = new Gson();
 
   @Test
   public void getSkillTest() throws Exception {
@@ -71,7 +67,7 @@ public class SkillControllerTest {
         .content(gson.toJson(input)))
         .andExpect(status().isCreated());
 
-     then(skillService).should(times(1)).save(input);
+    then(skillService).should(times(1)).save(input);
   }
 
   @Test

@@ -12,7 +12,9 @@ import ua.epam.model.AccountStatus;
 
 @UtilityClass
 public class AccountDtoGenerator {
-  private static final AccountConverter ACCOUNT_CONVERTER = new AccountConverter(new AccountStatusConverter());
+
+  private static final AccountConverter ACCOUNT_CONVERTER = new AccountConverter(
+      new AccountStatusConverter());
 
   public static AccountDto createAccountDto(long id) {
     return ACCOUNT_CONVERTER.convert(createAccount(id));

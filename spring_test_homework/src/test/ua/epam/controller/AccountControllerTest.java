@@ -20,21 +20,17 @@ import org.mockito.Mockito;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import ua.epam.util.AccountDtoGenerator;
 import ua.epam.dto.AccountDto;
 import ua.epam.service.AccountService;
+import ua.epam.util.AccountDtoGenerator;
 
 public class AccountControllerTest {
 
-  private final AccountService accountService = Mockito.mock(AccountService.class);
-
-  private final AccountController sut = new AccountController(accountService);
-
-  private final MockMvc mockMvc = MockMvcBuilders.standaloneSetup(sut).build();
-
-  private final Gson gson = new Gson();
-
   private static final String URL = "/api/v1/account";
+  private final AccountService accountService = Mockito.mock(AccountService.class);
+  private final AccountController sut = new AccountController(accountService);
+  private final MockMvc mockMvc = MockMvcBuilders.standaloneSetup(sut).build();
+  private final Gson gson = new Gson();
 
   @Test
   public void getAccountTest() throws Exception {

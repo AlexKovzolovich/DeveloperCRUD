@@ -3,6 +3,7 @@ package ua.epam.dto;
 import java.util.Set;
 
 public class DeveloperDto {
+
   private Long id;
   private String name;
   private AccountDto accountDto;

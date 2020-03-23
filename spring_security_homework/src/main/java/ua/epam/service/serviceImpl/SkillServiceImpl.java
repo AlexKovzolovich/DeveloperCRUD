@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import ua.epam.annotation.Timed;
 import ua.epam.converter.SkillConverter;
 import ua.epam.dto.SkillDto;
-import ua.epam.model.Skill;
 import ua.epam.repository.spring.SkillRepositoryJpa;
 import ua.epam.service.SkillService;
 

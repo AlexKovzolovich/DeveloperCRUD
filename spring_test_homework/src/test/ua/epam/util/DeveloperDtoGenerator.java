@@ -16,6 +16,7 @@ import ua.epam.model.Developer;
 import ua.epam.model.Skill;
 
 public class DeveloperDtoGenerator {
+
   private static final DeveloperConverter DEVELOPER_CONVERTER = new DeveloperConverter(
       new AccountConverter(new AccountStatusConverter()),
       new SkillConverter());

@@ -32,16 +32,18 @@ CREATE TABLE IF NOT EXISTS developer_skills
     skill_id     INT NOT NULL REFERENCES skills
 );
 
-CREATE TABLE users (
-    user_id INT NOT NULL PRIMARY KEY,
+CREATE TABLE users
+(
+    user_id   INT         NOT NULL PRIMARY KEY,
     user_name VARCHAR(45) NOT NULL,
-    password VARCHAR(45) NOT NULL,
-    enabled BOOLEAN
+    password  VARCHAR(45) NOT NULL,
+    enabled   BOOLEAN
 );
 
-CREATE TABLE user_roles (
-    user_role_id INT NOT NULL PRIMARY KEY,
-    user_id INT NOT NULL REFERENCES users,
-    authority VARCHAR(45) NOT NULL
+CREATE TABLE user_roles
+(
+    user_role_id INT         NOT NULL PRIMARY KEY,
+    user_id      INT         NOT NULL REFERENCES users,
+    authority    VARCHAR(45) NOT NULL
 );
 

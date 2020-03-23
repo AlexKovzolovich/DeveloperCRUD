@@ -41,14 +41,16 @@ public class AccountControllerIT extends BaseSpringIT {
         .andExpect(status().isCreated());
 
     mockMvc.perform(get(URL).param("id", "3")
-    .with(user("user").password("resu").roles("USER")))
+        .with(user("user").password("resu").roles("USER")))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.id", is(accountDto.getId().intValue())))
         .andExpect(jsonPath("$.data", is(accountDto.getData())))
         .andExpect(
-            jsonPath("$.accountStatusDto.id", is(accountDto.getAccountStatusDto().getId().intValue())))
+            jsonPath("$.accountStatusDto.id",
+                is(accountDto.getAccountStatusDto().getId().intValue())))
         .andExpect(
-            jsonPath("$.accountStatusDto.status", is(accountDto.getAccountStatusDto().getStatus())));
+            jsonPath("$.accountStatusDto.status",
+                is(accountDto.getAccountStatusDto().getStatus())));
   }
 
   @Test
@@ -72,8 +74,10 @@ public class AccountControllerIT extends BaseSpringIT {
         .andExpect(jsonPath("$.id", is(accountDto.getId().intValue())))
         .andExpect(jsonPath("$.data", is(accountDto.getData())))
         .andExpect(
-            jsonPath("$.accountStatusDto.id", is(accountDto.getAccountStatusDto().getId().intValue())))
+            jsonPath("$.accountStatusDto.id",
+                is(accountDto.getAccountStatusDto().getId().intValue())))
         .andExpect(
-            jsonPath("$.accountStatusDto.status", is(accountDto.getAccountStatusDto().getStatus())));
+            jsonPath("$.accountStatusDto.status",
+                is(accountDto.getAccountStatusDto().getStatus())));
   }
 }

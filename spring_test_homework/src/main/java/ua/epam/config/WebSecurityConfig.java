@@ -16,10 +16,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-  enum Roles {
-    GUEST, USER, ADMIN
-  }
-
   @Autowired
   private DataSource dataSource;
 
@@ -39,10 +35,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
         .authorizeRequests().antMatchers("/secret/**").hasRole(Roles.ADMIN.name())
         .and()
-        .authorizeRequests().antMatchers("/api/v1/**").hasAnyRole(Roles.ADMIN.name(), Roles.USER.name())
+        .authorizeRequests().antMatchers("/api/v1/**")
+        .hasAnyRole(Roles.ADMIN.name(), Roles.USER.name())
         .anyRequest()
         .authenticated()
         .and()
         .formLogin();
+  }
+
+  enum Roles {
+    GUEST, USER, ADMIN
   }
 }

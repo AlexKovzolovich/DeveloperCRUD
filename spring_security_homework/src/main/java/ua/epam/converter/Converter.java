@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public interface Converter<S, T> {
+
   T convert(S entity);
 
   S unConvert(T dto);

@@ -21,12 +21,13 @@ import ua.epam.dto.SkillDto;
 import ua.epam.util.SkillDtoGenerator;
 
 public class SkillControllerIT extends BaseSpringIT {
+
   private static final String URL = "/api/v1/skill";
   private final Gson gson = new Gson();
 
   @Test
   @Transactional
-  public  void transactionCreationWorksThroughAllLayersWhenExceptionThrown() throws Exception {
+  public void transactionCreationWorksThroughAllLayersWhenExceptionThrown() throws Exception {
     //Given
     SkillDto skillDto = SkillDtoGenerator.createSkillDto(1);
     Mockito.when(restTemplate.getForObject(any(URI.class), eq(SkillDto.class)))

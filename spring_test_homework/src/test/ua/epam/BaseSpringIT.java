@@ -35,6 +35,20 @@ public abstract class BaseSpringIT {
   @Autowired
   protected RestTemplate restTemplate;
 
+  @Bean
+  public DataSource dataSource(@Value("spring.datasource.driver-class-name") String driver,
+      @Value("spring.datasource.url") String url,
+      @Value("spring.datasource.username") String user,
+      @Value("spring.datasource.password") String password) {
+    DriverManagerDataSource dataSource = new DriverManagerDataSource();
+    dataSource.setDriverClassName(driver);
+    dataSource.setUrl(url);
+    dataSource.setUsername(user);
+    dataSource.setPassword(password);
+
+    return dataSource;
+  }
+
   @Configuration
   @EnableWebMvc
   @ComponentScan("ua.epam")
@@ -53,20 +67,6 @@ public abstract class BaseSpringIT {
     public RestTemplate restTemplate() {
       return Mockito.mock(RestTemplate.class);
     }
-  }
-
-  @Bean
-  public DataSource dataSource(@Value("spring.datasource.driver-class-name") String driver,
-      @Value("spring.datasource.url") String url,
-      @Value("spring.datasource.username") String user,
-      @Value("spring.datasource.password") String password) {
-    DriverManagerDataSource dataSource = new DriverManagerDataSource();
-    dataSource.setDriverClassName(driver);
-    dataSource.setUrl(url);
-    dataSource.setUsername(user);
-    dataSource.setPassword(password);
-
-    return dataSource;
   }
 
 }

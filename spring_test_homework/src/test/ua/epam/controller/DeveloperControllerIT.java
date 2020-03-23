@@ -17,9 +17,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 import org.springframework.http.MediaType;
 import ua.epam.BaseSpringIT;
-import ua.epam.dto.AccountDto;
 import ua.epam.dto.DeveloperDto;
-import ua.epam.util.AccountDtoGenerator;
 import ua.epam.util.DeveloperDtoGenerator;
 
 public class DeveloperControllerIT extends BaseSpringIT {

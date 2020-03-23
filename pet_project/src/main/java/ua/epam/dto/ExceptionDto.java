@@ -1,6 +1,7 @@
 package ua.epam.dto;
 
 public class ExceptionDto {
+
   private String cause;
   private Class<? extends Exception> exceptionClass;
 

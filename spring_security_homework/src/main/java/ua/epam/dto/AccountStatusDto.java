@@ -1,6 +1,7 @@
 package ua.epam.dto;
 
 public class AccountStatusDto {
+
   private Long id;
   private String status;
 

@@ -20,21 +20,17 @@ import org.mockito.Mockito;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import ua.epam.util.DeveloperDtoGenerator;
 import ua.epam.dto.DeveloperDto;
 import ua.epam.service.DeveloperService;
+import ua.epam.util.DeveloperDtoGenerator;
 
 public class DeveloperControllerTest {
 
-  private final DeveloperService developerService = Mockito.mock(DeveloperService.class);
-
-  private final DeveloperController sut = new DeveloperController(developerService);
-
-  private final MockMvc mockMvc = MockMvcBuilders.standaloneSetup(sut).build();
-
-  private final Gson gson = new Gson();
-
   private static final String URL = "/api/v1/developer";
+  private final DeveloperService developerService = Mockito.mock(DeveloperService.class);
+  private final DeveloperController sut = new DeveloperController(developerService);
+  private final MockMvc mockMvc = MockMvcBuilders.standaloneSetup(sut).build();
+  private final Gson gson = new Gson();
 
   @Test
   public void getDeveloperTest() throws Exception {

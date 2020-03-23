@@ -2,15 +2,15 @@
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration debug="true">
   <appender class="org.apache.log4j.FileAppender" name="fileAppender">
-    <param name="file" value="application.log"/>
     <layout class="org.apache.log4j.PatternLayout">
       <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
     </layout>
+    <param name="file" value="application.log"/>
   </appender>
 
   <root>
-    <priority value="WARN"/>
     <appender-ref ref="fileAppender"/>
+    <priority value="WARN"/>
   </root>
 </log4j:configuration>
 

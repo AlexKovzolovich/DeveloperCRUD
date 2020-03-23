@@ -11,7 +11,8 @@ public class AccountStatusConverter implements Converter<AccountStatus, AccountS
   @Override
   public AccountStatusDto convert(AccountStatus accountStatus) {
     if (Objects.isNull(accountStatus)) {
-      throw new IllegalArgumentException("Can`t convert accountStatus to dto, account status is null");
+      throw new IllegalArgumentException(
+          "Can`t convert accountStatus to dto, account status is null");
     }
     AccountStatusDto dto = new AccountStatusDto();
     dto.setId(accountStatus.getId());
@@ -22,7 +23,8 @@ public class AccountStatusConverter implements Converter<AccountStatus, AccountS
   @Override
   public AccountStatus unConvert(AccountStatusDto dto) {
     if (Objects.isNull(dto)) {
-      throw new IllegalArgumentException("Can`t convert accountStatusDto to accountStatus, dto is null");
+      throw new IllegalArgumentException(
+          "Can`t convert accountStatusDto to accountStatus, dto is null");
     }
     AccountStatus accountStatus = new AccountStatus();
     accountStatus.setId(dto.getId());

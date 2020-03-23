@@ -30,9 +30,10 @@ public class DeveloperConverter implements Converter<Developer, DeveloperDto> {
       throw new IllegalArgumentException(
           "Can`t convert developer to dto, developer`s account is null");
     }
-    
+
     if (Objects.isNull(developer.getAccount().getStatus())) {
-      throw new IllegalArgumentException("Can`t convert developer to dto, developer`s account status is null");
+      throw new IllegalArgumentException(
+          "Can`t convert developer to dto, developer`s account status is null");
     }
 
     if (Objects.isNull(developer.getSkills())) {
@@ -54,25 +55,27 @@ public class DeveloperConverter implements Converter<Developer, DeveloperDto> {
     if (Objects.isNull(dto)) {
       throw new IllegalArgumentException("Can`t convert dto to developer, dto is null");
     }
-    
+
     if (Objects.isNull(dto.getAccountDto())) {
       throw new IllegalArgumentException("Can`t convert dto to developer, dto`s account is null");
     }
-    
+
     if (Objects.isNull(dto.getAccountDto().getAccountStatusDto())) {
-      throw new IllegalArgumentException("Can`t convert dto to developer, dto`s account status is null");
+      throw new IllegalArgumentException(
+          "Can`t convert dto to developer, dto`s account status is null");
     }
-    
+
     if (Objects.isNull(dto.getSkillDtos())) {
-      throw new IllegalArgumentException("Can`t convert dto to developer, dto`s set of skills is null");
+      throw new IllegalArgumentException(
+          "Can`t convert dto to developer, dto`s set of skills is null");
     }
-    
+
     Developer developer = new Developer();
     developer.setId(dto.getId());
     developer.setName(dto.getName());
     developer.setAccount(accountConverter.unConvert(dto.getAccountDto()));
     developer.setSkills(new HashSet<>(skillConverter.unConvertAll(dto.getSkillDtos())));
-    
+
     return developer;
   }
 }

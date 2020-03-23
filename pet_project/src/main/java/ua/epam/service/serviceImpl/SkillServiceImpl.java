@@ -1,7 +1,6 @@
 package ua.epam.service.serviceImpl;
 
 import java.util.List;
-import javax.ws.rs.NotFoundException;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
