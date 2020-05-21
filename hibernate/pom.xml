@@ -357,7 +357,7 @@
     <mysql.version>8.0.15</mysql.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <taglibs.version>1.1.2</taglibs.version>
-    <tomcat.version>8.5.50</tomcat.version>
+    <tomcat.version>9.0.35</tomcat.version>
   </properties>
 
   <version>1.0-RELEASE</version>
