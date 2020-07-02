@@ -354,7 +354,7 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <mockito.version>3.2.4</mockito.version>
     <mybatis.version>3.4.6</mybatis.version>
-    <mysql.version>8.0.15</mysql.version>
+    <mysql.version>8.0.16</mysql.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <taglibs.version>1.1.2</taglibs.version>
     <tomcat.version>8.5.50</tomcat.version>
